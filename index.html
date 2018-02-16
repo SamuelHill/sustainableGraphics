@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sustainable Graphics</title>
+  <meta name="description" content="Sustainable Graphics - carbon footprint calculator">
+  <meta name="author" content="co-authored by Nisha Bhuva, Emily Blackman, Samuel Hill">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a id="navbar-about-a" class="navbar-brand" href="#about">
+    <img src="images/tree-black-silhouette-shape.svg" width="30" height="30" class="d-inline-block align-top">
+    Sustainable Graphics
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarNav" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+      <li id="navbar-assessment-li" class="nav-item">
+        <a id="navbar-assessment-a" class="nav-link" href="#assessment">Take Assessment</a>
+      </li>
+      <li id="navbar-login-li" class="nav-item">
+        <a id="navbar-login-a" class="nav-link" href="#login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="about">
+  HEY
+</div>
+
+<!-- ===ASSESSMENT=== -->
+<div id="assessment">
+  <!-- ===Assessment Navs=== -->
+  <ul class="nav nav-tabs nav-fill">
+    <li class="nav-item">
+      <a id="homeTab" class="nav-link active" data-toggle="tab" href="#home-assessment">Home</a>
+    </li>
+    <li class="nav-item">
+      <a id="transTab" class="nav-link" data-toggle="tab" href="#trans-assessment">Transportation</a>
+    </li>
+    <li class="nav-item">
+      <a id="dietTab" class="nav-link" data-toggle="tab" href="#diet-assessment">Diet</a>
+    </li>
+    <li class="nav-item">
+      <a id="resultsTab" class="nav-link" data-toggle="tab" href="#results-assessment">Results</a>
+    </li>
+  </ul>
+  <!-- Forms need to be one per page so all four tabs are wrapped in the form -->
+  <form>
+    <!-- ===Assessment Tabs=== -->
+    <div class="tab-content">
+      <!-- ===Home Tab=== -->
+      <div id="home-assessment" class="tab-pane active container">
+        <!-- ===Utilities=== -->
+        <div id="utilities" class="utilitiesSubSection">
+          <label for="utilitiesCheckbox">Utilities</label>
+          <fieldset id="utilitiesCheckbox" class="form-group">
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox1" class="form-check-input" type="checkbox" value="Heat">
+              <label for="utilitiesCheckbox1" class="form-check-label">Heat</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox2" class="form-check-input" type="checkbox" value="NaturalGas">
+              <label for="utilitiesCheckbox2" class="form-check-label">Natural Gas</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox3" class="form-check-input" type="checkbox" value="Electricity">
+              <label for="utilitiesCheckbox3" class="form-check-label">Electricity</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox4" class="form-check-input" type="checkbox" value="FuelOil">
+              <label for="utilitiesCheckbox4" class="form-check-label">Fuel Oil</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox5" class="form-check-input" type="checkbox" value="Propane">
+              <label for="utilitiesCheckbox5" class="form-check-label">Propane</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox6" class="form-check-input" type="checkbox" value="Coal">
+              <label for="utilitiesCheckbox6" class="form-check-label">Coal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="utilitiesCheckbox7" class="form-check-input" type="checkbox" value="LPG">
+              <label for="utilitiesCheckbox7" class="form-check-label">LPG</label>
+            </div>
+          </fieldset>
+        </div>
+        <!-- ===Heating Source=== -->
+        <div id="heatingSourceUtilities" class="utilitiesSubSection">
+          <div id="heatingSourceFields" class="row">
+            <div class="col-md-4">
+              <label for="heatingSourceSelect">Heating Source</label>
+              <select id="heatingSourceSelect" class="form-control">
+                <option value="none" selected disabled>----</option>
+                <option id="heatingNaturalGas" value="NaturalGas">Natural Gas</option>
+                <option id="heatingElectricity" value="Electricity">Electricity</option>
+                <option id="heatingFuelOil" value="FuelOil">Fuel Oil</option>
+                <option id="heatingPropane" value="Propane">Propane</option>
+                <option id="heatingCoal" value="Coal">Coal</option>
+                <option id="heatingLPG" value="LPG">LPG</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===Natural Gas=== -->
+        <div id="naturalGasUtilities" class="utilitiesSubSection">
+          <label for="naturalGasFields">Natural Gas</label>
+          <div id="naturalGasFields" class="row">
+            <div class="col-md-4">
+              <label for="naturalGasAmount">Amount</label>
+              <input id="naturalGasAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="naturalGasUnits">Units</label>
+              <select id="naturalGasUnits" class="form-control">
+                <option id="naturalGasUSD" value="USD">USD ($)</option>
+                <option id="naturalGasCubicFeet" value="CubicFeet">Thousand Cubic Feet</option>
+                <option id="naturalGaskWh" value="kWh">kWh</option>
+                <option id="naturalGasTherms" value="Therms">therms</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===Electricity=== -->
+        <div id="electricityUtilities" class="utilitiesSubSection">
+          <label for="electricityFields">Electricity</label>
+          <div id="electricityFields" class="row">
+            <div class="col-md-4">
+              <label for="electricityAmount">Amount</label>
+              <input id="electricityAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="electricityUnits">Units</label>
+              <select id="electricityUnits" class="form-control">
+                <option id="electricityUSD" value="USD">USD ($)</option>
+                <option id="electricitykWh" value="kWh">kWh</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===Fuel Oil=== -->
+        <div id="fuelOilUtilities" class="utilitiesSubSection">
+          <label for="fuelOilFields">Fuel Oil</label>
+          <div id="fuelOilFields" class="row">
+            <div class="col-md-4">
+              <label for="fuelOilAmount">Amount</label>
+              <input id="fuelOilAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="fuelOilUnits">Units</label>
+              <select id="fuelOilUnits" class="form-control">
+                <option id="fuelOilUSD" value="USD">USD ($)</option>
+                <option id="fuelOilkWh" value="kWh">kWh</option>
+                <option id="fuelOilGallons" value="Gallons">US gallons</option>
+                <option id="fuelOilLitres" value="Litres">litres</option>
+                <option id="fuelOilMetricTons" value="MetricTons">metric tons</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===Propane=== -->
+        <div id="propaneUtilities" class="utilitiesSubSection">
+          <label for="propaneFields">Propane</label>
+          <div id="propaneFields" class="row">
+            <div class="col-md-4">
+              <label for="propaneAmount">Amount</label>
+              <input id="propaneAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="propaneUnits">Units</label>
+              <select id="propaneUnits" class="form-control">
+                <option id="propaneUSD" value="USD">USD ($)</option>
+                <option id="propanekWh" value="kWh">kWh</option>
+                <option id="propaneGallons" value="Gallons">US gallons</option>
+                <option id="propaneLitres" value="Litres">litres</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===Coal=== -->
+        <div id="coalUtilities" class="utilitiesSubSection">
+          <label for="coalFields">Coal</label>
+          <div id="coalFields" class="row">
+            <div class="col-md-4">
+              <label for="coalAmount">Amount</label>
+              <input id="coalAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="coalUnits">Units</label>
+              <select id="coalUnits" class="form-control">
+                <option id="coalUSD" value="USD">USD ($)</option>
+                <option id="coalkWh" value="kWh">kWh</option>
+                <option id="coalMetricTons" value="MetricTons">metric tons</option>
+                <option id="coal10kg" value="10kg">x10kg bags</option>
+                <option id="coal20kg" value="20kg">x20kg bags</option>
+                <option id="coal25kg" value="25kg">x25kg bags</option>
+                <option id="coal50kg" value="50kg">x50kg bags</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- ===LPG=== -->
+        <div id="lpgUtilities" class="utilitiesSubSection">
+          <label for="lpgFields">LPG</label>
+          <div id="lpgFields" class="row">
+            <div class="col-md-4">
+              <label for="lpgAmount">Amount</label>
+              <input id="lpgAmount" class="form-control" type="text" placeholder="Amount">
+            </div>
+            <div class="col-md-4">
+              <label for="lpgUnits">Units</label>
+              <select id="lpgUnits" class="form-control">
+                <option id="lpgUSD" value="USD">USD ($)</option>
+                <option id="lpgkWh" value="kWh">kWh</option>
+                <option id="lpgTherms" value="Therms">therms</option>
+                <option id="lpgGallons" value="Gallons">US gallons</option>
+                <option id="lpgLitres" value="Litres">litres</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="assessmentNavigation"> <!-- container for floats -->
+          <div class="assessmentContinue">
+            <button id="continueHome" class="btn btn-primary" type="button">Continue</button>
+          </div>
+        </div>
+      </div>
+      <!-- ===Transportation Tab=== -->
+      <div id="trans-assessment" class="tab-pane container">
+        <div>
+          Transportation
+        </div>
+        <div class="assessmentNavigation"> <!-- container for floats -->
+          <div class="assessmentBack">
+            <button id="backTrans" class="btn btn-primary" type="button">Back</button>
+          </div>
+          <div class="assessmentContinue">
+            <button id="continueTrans" class="btn btn-primary" type="button">Continue</button>
+          </div>
+        </div>
+      </div>
+      <!-- ===Diet Tab=== -->
+      <div id="diet-assessment" class="tab-pane container">
+        <div>
+          Diet
+        </div>
+        <div class="assessmentNavigation"> <!-- container for floats -->
+          <div class="assessmentBack">
+            <button id="backDiet" class="btn btn-primary" type="button">Back</button>
+          </div>
+          <div class="assessmentContinue">
+            <button id="continueDiet" class="btn btn-primary" type="button">Continue</button>
+          </div>
+        </div>
+      </div>
+      <!-- ===Results Tab=== -->
+      <div id="results-assessment" class="tab-pane container">
+        <div>
+          Results
+        </div>
+        <div class="assessmentNavigation"> <!-- container for floats -->
+          <div class="assessmentBack">
+            <button id="backResults" class="btn btn-primary" type="button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Login modal -->
+<div id="login" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="signup" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sign up</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All scripts for bootstrap and main controls -->
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+
+</html>
