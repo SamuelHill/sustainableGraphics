@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-02-18 20:00:08
+* @Last Modified time: 2018-02-19 05:42:59
 */
 
 window.onload = function() {
@@ -28,6 +28,7 @@ window.onload = function() {
     navbarLogin.addEventListener('click', function(){
         $('#login').modal('show');
     });
+
     // Home Tab
     // -> Utilities checkboxs
     var utilitiesCheckbox1 = document.getElementById('utilitiesCheckbox1');
@@ -65,18 +66,20 @@ window.onload = function() {
         var lpgUtilities = document.getElementById('lpgUtilities');
         ifTrueDisplay(utilitiesCheckbox7.checked, lpgUtilities);
     });
+
     // Transportation Tab
     // -> Vehicles
     var numVehiclesSelector = document.getElementById('numVehiclesSelector');
-    var vehicleOptions = [document.getElementById('vehicle1'),
-                          document.getElementById('vehicle2'),
-                          document.getElementById('vehicle3'),
-                          document.getElementById('vehicle4'),
-                          document.getElementById('vehicle5')];
     numVehiclesSelector.addEventListener('change', function() {
         var numVehicles = parseInt(numVehiclesSelector.options[numVehiclesSelector.selectedIndex].value);
-        for (var i = 0; i <= 5; i++) {
-            ifTrueDisplay(i < numVehicles, vehicleOptions[i]);
+        if (numVehicles != 0) {
+            for (var i = 1; i <= 5; i++) {
+                ifTrueDisplay(i < (numVehicles + 1), document.getElementById('vehicle' + i));
+            }
+        } else {
+            for (var i = 1; i <= 5; i++) {
+                ifTrueDisplay(false, document.getElementById('vehicle' + i));
+            }
         }
     });
     // -> Public Transit
@@ -103,8 +106,61 @@ window.onload = function() {
         var bus = document.getElementById('taxi');
         ifTrueDisplay(selectedPublicTransit.indexOf('taxi') != -1, taxi);
     });
+    // -> Flights
+    var addFlight = document.getElementById('addFlight');
+    addFlight.addEventListener('click', function() {
+        // Get values
+        var flightTypeRadio = document.getElementById("roundTripCheck").checked;
+        var from = document.getElementById("fromDestinationSelector");
+        var fromDestination = from.options[from.selectedIndex].value;
+        var to = document.getElementById("toDestinationSelector");
+        var toDestination = to.options[to.selectedIndex].value;
+        if (fromDestination == "none" || toDestination == "none") {
+            alert("Please fill out from and to.")
+        } else {
+            // Build flight info...
+            // <div class="card cardSpacing">
+            //   <div class="card-body cardBodySpacing">
+            //     <h5 class="cardTitleSpacing">From -> To</h5>
+            //     <h6 class="text-muted cardSubtitleSpacing">Distance 1000mi</h6>
+            //   </div>
+            // </div>
+            var card = document.createElement("DIV");
+            card.className = "card cardSpacing";
+            var cardBody = document.createElement("DIV");
+            cardBody.className = "card-body cardBodySpacing";
+            var cardTitle = document.createElement("H5");
+            cardTitle.className = "cardTitleSpacing";
+            var titleText = fromDestination + " -> " + toDestination;
+            if (flightTypeRadio) {
+                titleText += " -> " + fromDestination;
+            }
+            var fromToText = document.createTextNode(titleText);
+            cardTitle.appendChild(fromToText);
+            cardBody.appendChild(cardTitle);
+            var cardSubtitle = document.createElement("H6");
+            cardSubtitle.className = "text-muted cardSubtitleSpacing";
+            var subtitleText = "Distance ";
+            if (flightTypeRadio) {
+                subtitleText += "2000";
+            } else {
+                subtitleText += "1000";
+            }
+            subtitleText += " miles";
+            var distanceText = document.createTextNode(subtitleText);
+            cardSubtitle.appendChild(distanceText);
+            cardBody.appendChild(cardSubtitle);
+            card.appendChild(cardBody);
+            document.getElementById("flightsTaken").appendChild(card);
+            // Clear inputs
+            document.getElementById('roundTripCheck').checked = true;
+            document.getElementById('oneWayCheck').checked = false;
+            document.getElementById("fromDestinationSelector").selectedIndex = "0";
+            document.getElementById("toDestinationSelector").selectedIndex = "0";
+        }
+    });
 
-    // -> Diet 
+    // Diet Tab
     var meatSelector = document.getElementById('dietSelection');
     meatSelector.addEventListener('change',function() {
         var selectedDiet = [];
@@ -117,7 +173,8 @@ window.onload = function() {
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, typeOfMeat);
         var noRestrictions = document.getElementById('mealsPerDay');
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, mealsPerDay);
-    })
+    });
+
     // Assessment navigation
     var continueHome = document.getElementById('continueHome');
     continueHome.addEventListener('click', function() {

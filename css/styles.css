@@ -6,7 +6,8 @@
 /* CSS DIRECTORY
     1. =GLOBAL
     2. =PAGES
-    3. =ASSESSMENT
+    3. =ABOUT
+    4. =ASSESSMENT
 */
 
 /* COLORS
@@ -30,6 +31,21 @@ nav {
     background-color: #498096;
 }
 
+.spacing-container {
+    margin-top: 20px;
+}
+
+.hr {
+    margin-right: auto;
+    margin-left: auto;
+    border-top: 1px solid #596157;
+    width: 90%;
+}
+
+.clearFloats {
+    clear: both;
+}
+
 /*  ===PAGES===  */
 #about-us {
 }
@@ -42,10 +58,46 @@ nav {
     display: none;
 }
 
-/*  ===ASSESSMENT===  */
-.assessmentNavigation {
-    margin-top: 20px;
+/*  ===ABOUT===  */
+
+.center_of_page {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: block;
 }
+
+#image_container {
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+
+#image_container img {
+    width: 500px;
+}
+
+.image_link {
+    /*position:relative;*/
+    font-size: xx-small;
+    text-decoration: none;
+}
+
+#about_name{
+    padding-top: 10px;
+    font-size: x-large;
+    font-weight: bolder;
+    font-style: italic;
+    color: #52414C;
+    text-align: center;
+}
+
+#about_description{
+    padding-top: 10px;
+    text-align: center;
+}
+
+/*  ===ASSESSMENT===  */
 
 .assessmentContinue {
     float: right;
@@ -55,9 +107,7 @@ nav {
     float: left;
 }
 
-.utilitiesSubSection {
-    margin-top: 20px;
-}
+/* Home Tab */
 
 #heatingSourceUtilities {
     display: none;
@@ -87,29 +137,7 @@ nav {
     display: none;
 }
 
-/* Diet Tab */
-
-#diet-assessment {
-	margin-top: 20px;
-}
-
-#dietFields label {
-	margin-top: 20px;
-}
-
-#mealsPerDay {
-	display: none;
-}
-
-#typeOfMeat {
-	display: none;
-}
-
 /* Transportation Tab */
-
-.vehicle {
-    margin-top: 20px;
-}
 
 #vehicle1 {
     display: none;
@@ -156,5 +184,35 @@ nav {
 }
 
 #taxi {
+    display: none;
+}
+
+.cardSpacing {
+    margin-top: 10px;
+}
+
+.cardBodySpacing {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+}
+
+.cardTitleSpacing {
+    float: left;
+}
+
+.cardSubtitleSpacing {
+    margin-top: 3px;
+    float: right;
+}
+
+/* Diet Tab */
+
+#mealsPerDay {
+    display: none;
+}
+
+#typeOfMeat {
     display: none;
 }
