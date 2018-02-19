@@ -93,6 +93,10 @@ nav {
 	margin-top: 20px;
 }
 
+#dietFields label {
+	margin-top: 20px;
+}
+
 /* Transportation Tab */
 
 .vehicle {
