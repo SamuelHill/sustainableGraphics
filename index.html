@@ -425,16 +425,21 @@
             <label for="locallySourced"> What percentage of your food is locally sourced? </label>
             <input id="locallySourced" class="form-control" type="text" placeholder="Enter a Number">
             <label for="dietaryStyle"> What is your dietary style? </label>
-            <select id="naturalGasUnits" class="form-control">
+            <select id="dietSelection" class="form-control">
+              <option id="noSelection" value="noSelection">Please Select an Option</option>
               <option id="noRestrictions" value="noRestrictions">No Restrictions</option>
-              <option id="vegetarian" value="vegetarian">Vegetarian</option>
+              <option id="vegetarian" value="vegetarian">Vegetarian or Vegan</option>
               <option id="vegan" value="vegan">Vegan</option>
               
             </select>
-            <label for="mealsPerDay"> How many of your meals each day include meat? </label>
-            <input id="mealsPerDay" class="form-control" type="text" placeholder="Enter a Number">
-            <label for="typeOfMeat"> Of the meat you consume, what percentage is beef, lamb, or goat? </label>
-            <input id="typeOfMeat" class="form-control" type="text" placeholder="Enter a Number">
+            <div id="mealsPerDay">
+              <label for="mealsPerDay"> How many of your meals each day include meat? </label>
+              <input id="mealsPerDayInput" class="form-control" type="text" placeholder="Enter a Number">
+            </div>
+            <div id="typeOfMeat">
+              <label for="typeOfMeat"> Of the meat you consume, what percentage is beef, lamb, or goat? </label>
+              <input id="typeOfMeatInput" class="form-control" type="text" placeholder="Enter a Number">
+            </div>
    
            
           </div>

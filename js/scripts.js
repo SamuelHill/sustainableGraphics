@@ -103,6 +103,21 @@ window.onload = function() {
         var bus = document.getElementById('taxi');
         ifTrueDisplay(selectedPublicTransit.indexOf('taxi') != -1, taxi);
     });
+
+    // -> Diet 
+    var meatSelector = document.getElementById('dietSelection');
+    meatSelector.addEventListener('change',function() {
+        var selectedDiet = [];
+        for (var i = 0; i < meatSelector.length; i++){
+            if (meatSelector.options[i].selected){
+                selectedDiet.push(meatSelector.options[i].value);
+            }
+        }
+        var noRestrictions = document.getElementById('typeOfMeat');
+        ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, typeOfMeat);
+        var noRestrictions = document.getElementById('mealsPerDay');
+        ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, mealsPerDay);
+    })
     // Assessment navigation
     var continueHome = document.getElementById('continueHome');
     continueHome.addEventListener('click', function() {

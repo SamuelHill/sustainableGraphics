@@ -97,6 +97,14 @@ nav {
 	margin-top: 20px;
 }
 
+#mealsPerDay {
+	display: none;
+}
+
+#typeOfMeat {
+	display: none;
+}
+
 /* Transportation Tab */
 
 .vehicle {
