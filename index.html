@@ -236,8 +236,176 @@
       </div>
       <!-- ===Transportation Tab=== -->
       <div id="trans-assessment" class="tab-pane container">
-        <div>
-          Transportation
+        <!-- Cars -->
+        <div id="numVehicles" class="row vehicle">
+          <div class="col-md-4">
+            <label for="numVehiclesSelector">How many vehicles do you have?</label>
+            <select id="numVehiclesSelector" class="form-control">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+        <div id="vehicle1" class="vehicle">
+          <label for="vehicle1fields">Vehicle 1</label>
+          <div id="vehicle1fields" class="row">
+            <div class="col-md-4">
+              <label for="milesDriven1">On average, how many miles you drive per week:</label>
+              <!-- Need way to mark if a car is an electric vehicle -->
+              <input id="milesDriven1" class="form-control" type="text" placeholder="miles per week">
+            </div>
+            <div class="col-md-4">
+              <label for="mileage1">Average gas mileage:</label>
+              <!-- put units at end of input (input group...) -->
+              <input id="mileage1" class="form-control" type="text" placeholder="mpg">
+            </div>
+          </div>
+        </div>
+        <div id="vehicle2" class="vehicle">
+          <label for="vehicle2fields">Vehicle 2</label>
+          <div id="vehicle2fields" class="row">
+            <div class="col-md-4">
+              <label for="milesDriven2">On average, how many miles you drive per week:</label>
+              <!-- Need way to mark if a car is an electric vehicle -->
+              <input id="milesDriven2" class="form-control" type="text" placeholder="miles per week">
+            </div>
+            <div class="col-md-4">
+              <label for="mileage2">Average gas mileage:</label>
+              <!-- put units at end of input (input group...) -->
+              <input id="mileage2" class="form-control" type="text" placeholder="mpg">
+            </div>
+          </div>
+        </div>
+        <div id="vehicle3" class="vehicle">
+          <label for="vehicle3fields">Vehicle 3</label>
+          <div id="vehicle3fields" class="row">
+            <div class="col-md-4">
+              <label for="milesDriven3">On average, how many miles you drive per week:</label>
+              <!-- Need way to mark if a car is an electric vehicle -->
+              <input id="milesDriven3" class="form-control" type="text" placeholder="miles per week">
+            </div>
+            <div class="col-md-4">
+              <label for="mileage3">Average gas mileage:</label>
+              <!-- put units at end of input (input group...) -->
+              <input id="mileage3" class="form-control" type="text" placeholder="mpg">
+            </div>
+          </div>
+        </div>
+        <div id="vehicle4" class="vehicle">
+          <label for="vehicle4fields">Vehicle 4</label>
+          <div id="vehicle4fields" class="row">
+            <div class="col-md-4">
+              <label for="milesDriven4">On average, how many miles you drive per week:</label>
+              <!-- Need way to mark if a car is an electric vehicle -->
+              <input id="milesDriven4" class="form-control" type="text" placeholder="miles per week">
+            </div>
+            <div class="col-md-4">
+              <label for="mileage4">Average gas mileage:</label>
+              <!-- put units at end of input (input group...) -->
+              <input id="mileage4" class="form-control" type="text" placeholder="mpg">
+            </div>
+          </div>
+        </div>
+        <div id="vehicle5" class="vehicle">
+          <label for="vehicle5fields">Vehicle 5</label>
+          <div id="vehicle5fields" class="row">
+            <div class="col-md-4">
+              <label for="milesDriven5">On average, how many miles you drive per week:</label>
+              <!-- Need way to mark if a car is an electric vehicle -->
+              <input id="milesDriven5" class="form-control" type="text" placeholder="miles per week">
+            </div>
+            <div class="col-md-4">
+              <label for="mileage5">Average gas mileage:</label>
+              <!-- put units at end of input (input group...) -->
+              <input id="mileage5" class="form-control" type="text" placeholder="mpg">
+            </div>
+          </div>
+        </div>
+        <!-- Public Transit -->
+        <div id="publicTransit" class="row vehicle">
+          <div class="col-md-4">
+            <label for="publicTransitSelector">What forms of public transit do you use?</label>
+            <select id="publicTransitSelector" class="form-control" multiple size="7">
+              <option value="bus">Bus</option>
+              <option value="coach">Coach</option>
+              <option value="localTrain">Local/Commuter Train</option>
+              <option value="longDistTrain">Long Distance Train</option>
+              <option value="tram">Tram</option>
+              <option value="subway">Subway</option>
+              <option value="taxi">Taxi/Uber/Lyft</option>
+            </select>
+          </div>
+        </div>
+        <div id="bus" class="vehicle">
+          <label for="busFields">Bus</label>
+          <div id="busFields" class="row">
+            <div class="col-md-4">
+              <label for="busMiles">On average, miles you ride per week:</label>
+              <input id="busMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="coach" class="vehicle">
+          <label for="coachFields">Coach</label>
+          <div id="coachFields" class="row">
+            <div class="col-md-4">
+              <label for="coachMiles">On average, miles you ride per week:</label>
+              <input id="coachMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="localTrain" class="vehicle">
+          <label for="localTrainFields">Local/Commuter Train</label>
+          <div id="localTrainFields" class="row">
+            <div class="col-md-4">
+              <label for="localTrainMiles">On average, miles you ride per week:</label>
+              <input id="localTrainMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="longDistTrain" class="vehicle">
+          <label for="longDistTrainFields">Long Distance Train</label>
+          <div id="longDistTrainFields" class="row">
+            <div class="col-md-4">
+              <label for="longDistTrainMiles">On average, miles you ride per week:</label>
+              <input id="longDistTrainMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="tram" class="vehicle">
+          <label for="tramFields">Tram</label>
+          <div id="tramFields" class="row">
+            <div class="col-md-4">
+              <label for="tramMiles">On average, miles you ride per week:</label>
+              <input id="tramMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="subway" class="vehicle">
+          <label for="subwayFields">Subway</label>
+          <div id="subwayFields" class="row">
+            <div class="col-md-4">
+              <label for="subwayMiles">On average, miles you ride per week:</label>
+              <input id="subwayMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <div id="taxi" class="vehicle">
+          <label for="taxiFields">Taxi/Uber/Lyft</label>
+          <div id="taxiFields" class="row">
+            <div class="col-md-4">
+              <label for="taxiMiles">On average, miles you ride per week:</label>
+              <input id="taxiMiles" class="form-control" type="text" placeholder="miles per week">
+            </div>
+          </div>
+        </div>
+        <!-- Flights -->
+        <div id="flights" class="row vehicle">
+          Flights
         </div>
         <div class="assessmentNavigation"> <!-- container for floats -->
           <div class="assessmentBack">
