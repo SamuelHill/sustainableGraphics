@@ -87,6 +87,24 @@ nav {
     display: none;
 }
 
+/* Diet Tab */
+
+#diet-assessment {
+	margin-top: 20px;
+}
+
+#dietFields label {
+	margin-top: 20px;
+}
+
+#mealsPerDay {
+	display: none;
+}
+
+#typeOfMeat {
+	display: none;
+}
+
 /* Transportation Tab */
 
 .vehicle {
