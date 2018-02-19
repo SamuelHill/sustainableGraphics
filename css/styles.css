@@ -87,6 +87,62 @@ nav {
     display: none;
 }
 
+/* Diet Tab */
+
 #diet-assessment {
 	margin-top: 20px;
+}
+
+/* Transportation Tab */
+
+.vehicle {
+    margin-top: 20px;
+}
+
+#vehicle1 {
+    display: none;
+}
+
+#vehicle2 {
+    display: none;
+}
+
+#vehicle3 {
+    display: none;
+}
+
+#vehicle4 {
+    display: none;
+}
+
+#vehicle5 {
+    display: none;
+}
+
+#bus {
+    display: none;
+}
+
+#coach {
+    display: none;
+}
+
+#localTrain {
+    display: none;
+}
+
+#longDistTrain {
+    display: none;
+}
+
+#tram {
+    display: none;
+}
+
+#subway {
+    display: none;
+}
+
+#taxi {
+    display: none;
 }
