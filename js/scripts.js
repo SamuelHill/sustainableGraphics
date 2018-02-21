@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-02-19 05:42:59
+* @Last Modified time: 2018-02-21 03:07:58
 */
 
 window.onload = function() {
@@ -27,6 +27,56 @@ window.onload = function() {
     var navbarLogin = document.getElementById('navbar-login-a');
     navbarLogin.addEventListener('click', function(){
         $('#login').modal('show');
+    });
+    // signup
+    var signupButton = document.getElementById('signupButton');
+    signupButton.addEventListener('click', function(){
+        $('#login').modal('hide');
+        $('#signup').modal('show');
+    });
+
+    // About Section
+    var takeAssessmentButton = document.getElementById('takeAssessmentButton');
+    takeAssessmentButton.addEventListener('click', function() {
+        navbarAssessment.click();
+    });
+    var loginButton = document.getElementById('loginButton');
+    loginButton.addEventListener('click', function() {
+        navbarLogin.click();
+    });
+
+    // Assessment navigation
+    var continueHome = document.getElementById('continueHome');
+    continueHome.addEventListener('click', function() {
+        document.getElementById('transTab').click();
+    });
+    var backTrans = document.getElementById('backTrans');
+    backTrans.addEventListener('click', function() {
+        document.getElementById('homeTab').click();
+    });
+    var continueTrans = document.getElementById('continueTrans');
+    continueTrans.addEventListener('click', function() {
+        document.getElementById('dietTab').click();
+    });
+    var backDiet = document.getElementById('backDiet');
+    backDiet.addEventListener('click', function() {
+        document.getElementById('transTab').click();
+    });
+    var continueDiet = document.getElementById('continueDiet');
+    continueDiet.addEventListener('click', function() {
+        document.getElementById('resultsTab').click();
+    });
+    var backResults = document.getElementById('backResults');
+    backResults.addEventListener('click', function() {
+        document.getElementById('dietTab').click();
+    });
+    var continueResults = document.getElementById('continueResults');
+    continueResults.addEventListener('click', function() {
+        document.getElementById('goalsTab').click();
+    });
+    var goalsResults = document.getElementById('goalsResults');
+    goalsResults.addEventListener('click', function() {
+        document.getElementById('resultsTab').click();
     });
 
     // Home Tab
@@ -119,18 +169,18 @@ window.onload = function() {
             alert("Please fill out from and to.")
         } else {
             // Build flight info...
-            // <div class="card cardSpacing">
-            //   <div class="card-body cardBodySpacing">
-            //     <h5 class="cardTitleSpacing">From -> To</h5>
-            //     <h6 class="text-muted cardSubtitleSpacing">Distance 1000mi</h6>
+            // <div class="card flightCardSpacing">
+            //   <div class="card-body flightCardBodySpacing">
+            //     <h5 class="flightCardTitleSpacing">From -> To</h5>
+            //     <h6 class="text-muted flightCardSubtitleSpacing">Distance 1000mi</h6>
             //   </div>
             // </div>
             var card = document.createElement("DIV");
-            card.className = "card cardSpacing";
+            card.className = "card flightCardSpacing";
             var cardBody = document.createElement("DIV");
-            cardBody.className = "card-body cardBodySpacing";
+            cardBody.className = "card-body flightCardBodySpacing";
             var cardTitle = document.createElement("H5");
-            cardTitle.className = "cardTitleSpacing";
+            cardTitle.className = "flightCardTitleSpacing";
             var titleText = fromDestination + " -> " + toDestination;
             if (flightTypeRadio) {
                 titleText += " -> " + fromDestination;
@@ -139,7 +189,7 @@ window.onload = function() {
             cardTitle.appendChild(fromToText);
             cardBody.appendChild(cardTitle);
             var cardSubtitle = document.createElement("H6");
-            cardSubtitle.className = "text-muted cardSubtitleSpacing";
+            cardSubtitle.className = "text-muted flightCardSubtitleSpacing";
             var subtitleText = "Distance ";
             if (flightTypeRadio) {
                 subtitleText += "2000";
@@ -174,32 +224,6 @@ window.onload = function() {
         var noRestrictions = document.getElementById('mealsPerDay');
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, mealsPerDay);
     });
-
-    // Assessment navigation
-    var continueHome = document.getElementById('continueHome');
-    continueHome.addEventListener('click', function() {
-        document.getElementById('transTab').click();
-    });
-    var continueTrans = document.getElementById('continueTrans');
-    continueTrans.addEventListener('click', function() {
-        document.getElementById('dietTab').click();
-    });
-    var continueDiet = document.getElementById('continueDiet');
-    continueDiet.addEventListener('click', function() {
-        document.getElementById('resultsTab').click();
-    });
-    var backTrans = document.getElementById('backTrans');
-    backTrans.addEventListener('click', function() {
-        document.getElementById('homeTab').click();
-    });
-    var backDiet = document.getElementById('backDiet');
-    backDiet.addEventListener('click', function() {
-        document.getElementById('transTab').click();
-    });
-    var backResults = document.getElementById('backResults');
-    backResults.addEventListener('click', function() {
-        document.getElementById('dietTab').click();
-    });
 }
 
 function ifTrueDisplay(boolean, toDisplay) {
@@ -209,3 +233,52 @@ function ifTrueDisplay(boolean, toDisplay) {
         toDisplay.style.display = 'none';
     }
 }
+
+Highcharts.chart('resultsChart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Your impact vs national average and paris climate agreement goal'
+    },
+    xAxis: {
+        categories: [
+            'Home',
+            'Transportation',
+            'Diet'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Tons of CO2 (t/CO2)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} t/CO2</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'US Avg.',
+        data: [1990, 3836, 864]
+
+    }, {
+        name: 'You',
+        data: [1215, 2788, 498]
+    }, {
+        name: 'Paris Climate Agreement goal',
+        data: [900, 1200, 350]
+
+    }]
+});

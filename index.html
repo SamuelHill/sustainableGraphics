@@ -33,6 +33,7 @@
   </div>
 </nav>
 
+<!-- ===ABOUT=== -->
 <div id="about" class="center_of_page">
   <div id="image_container">
     <img src="images/pickup_vision.jpg">
@@ -44,12 +45,79 @@
     Welcome to our Carbon Footprint Calculator!
   </div>
   <div id="about_description">
-    Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" link in the top right.
+    &emsp;&emsp;Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" link in the top right or the button in the bottom left. To log in to your account or to sign up for a new account select the link in the top right or the button in the bottom right.
+  </div>
+  <div class="spacing-container">
+    <div class="aboutAssessmentButton">
+      <button id="takeAssessmentButton" class="btn btn-primary" type="button">Take Assessment</button>
+    </div>
+    <div class="aboutLoginButton">
+      <button id="loginButton" class="btn" type="button">Login</button>
+    </div>
+  </div>
+  <div class="clearFloats spacing-container"></div>
+</div>
+
+<!-- ===LOGIN=== -->
+<div id="login" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input class="form-control" id="loginUsername" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="loginSubmit" type="button" class="btn btn-primary">Login</button>
+        <button id="signupButton" type="button" class="btn btn-secondary">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="signup" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input class="form-control" id="loginUsername" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="signupSubmit" type="button" class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- ===ASSESSMENT=== -->
 <div id="assessment" class="center_of_page">
+
   <!-- ===Assessment Navs=== -->
   <ul class="nav nav-tabs nav-fill">
     <li class="nav-item">
@@ -64,580 +132,612 @@
     <li class="nav-item">
       <a id="resultsTab" class="nav-link" data-toggle="tab" href="#results-assessment">Results</a>
     </li>
+    <li class="nav-item">
+      <a id="goalsTab" class="nav-link" data-toggle="tab" href="#goals-assessment">Goals</a>
+    </li>
   </ul>
-  <!-- Forms need to be one per page so all four tabs are wrapped in the form -->
-  <form>
-    <!-- ===Assessment Tabs=== -->
-    <div class="tab-content">
 
-      <!-- ===Home Tab=== -->
-      <div id="home-assessment" class="tab-pane active container">
+  <!-- ===Assessment Tabs=== -->
+  <div class="tab-content">
 
-        <!-- ===Utilities=== -->
-        <div id="utilities" class="spacing-container">
-          <label for="utilitiesCheckbox">Utilities</label>
-          <fieldset id="utilitiesCheckbox" class="form-group">
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox1" class="form-check-input" type="checkbox" value="Heat">
-              <label for="utilitiesCheckbox1" class="form-check-label">Heat</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox2" class="form-check-input" type="checkbox" value="NaturalGas">
-              <label for="utilitiesCheckbox2" class="form-check-label">Natural Gas</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox3" class="form-check-input" type="checkbox" value="Electricity">
-              <label for="utilitiesCheckbox3" class="form-check-label">Electricity</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox4" class="form-check-input" type="checkbox" value="FuelOil">
-              <label for="utilitiesCheckbox4" class="form-check-label">Fuel Oil</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox5" class="form-check-input" type="checkbox" value="Propane">
-              <label for="utilitiesCheckbox5" class="form-check-label">Propane</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox6" class="form-check-input" type="checkbox" value="Coal">
-              <label for="utilitiesCheckbox6" class="form-check-label">Coal</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="utilitiesCheckbox7" class="form-check-input" type="checkbox" value="LPG">
-              <label for="utilitiesCheckbox7" class="form-check-label">LPG</label>
-            </div>
-          </fieldset>
-        </div>
+    <!-- ===Home Tab=== -->
+    <div id="home-assessment" class="tab-pane active container">
 
-        <!-- ===Heating Source=== -->
-        <div id="heatingSourceUtilities" class="spacing-container">
-          <div id="heatingSourceFields" class="row">
-            <div class="col-md-4">
-              <label for="heatingSourceSelect">Heating Source</label>
-              <select id="heatingSourceSelect" class="form-control">
-                <option value="none" selected disabled>----</option>
-                <option id="heatingNaturalGas" value="NaturalGas">Natural Gas</option>
-                <option id="heatingElectricity" value="Electricity">Electricity</option>
-                <option id="heatingFuelOil" value="FuelOil">Fuel Oil</option>
-                <option id="heatingPropane" value="Propane">Propane</option>
-                <option id="heatingCoal" value="Coal">Coal</option>
-                <option id="heatingLPG" value="LPG">LPG</option>
-              </select>
-            </div>
+      <!-- ===Utilities=== -->
+      <div id="utilities" class="spacing-container">
+        <label for="utilitiesCheckbox">Utilities</label>
+        <fieldset id="utilitiesCheckbox" class="form-group">
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox1" class="form-check-input" type="checkbox" value="Heat">
+            <label for="utilitiesCheckbox1" class="form-check-label">Heat</label>
           </div>
-        </div>
-
-        <!-- ===Natural Gas=== -->
-        <div id="naturalGasUtilities" class="spacing-container">
-          <label for="naturalGasFields">Natural Gas</label>
-          <div id="naturalGasFields" class="row">
-            <div class="col-md-4">
-              <label for="naturalGasAmount">Amount</label>
-              <input id="naturalGasAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="naturalGasUnits">Units</label>
-              <select id="naturalGasUnits" class="form-control">
-                <option id="naturalGasUSD" value="USD">USD ($)</option>
-                <option id="naturalGasCubicFeet" value="CubicFeet">Thousand Cubic Feet</option>
-                <option id="naturalGaskWh" value="kWh">kWh</option>
-                <option id="naturalGasTherms" value="Therms">therms</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox2" class="form-check-input" type="checkbox" value="NaturalGas">
+            <label for="utilitiesCheckbox2" class="form-check-label">Natural Gas</label>
           </div>
-        </div>
-
-        <!-- ===Electricity=== -->
-        <div id="electricityUtilities" class="spacing-container">
-          <label for="electricityFields">Electricity</label>
-          <div id="electricityFields" class="row">
-            <div class="col-md-4">
-              <label for="electricityAmount">Amount</label>
-              <input id="electricityAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="electricityUnits">Units</label>
-              <select id="electricityUnits" class="form-control">
-                <option id="electricityUSD" value="USD">USD ($)</option>
-                <option id="electricitykWh" value="kWh">kWh</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox3" class="form-check-input" type="checkbox" value="Electricity">
+            <label for="utilitiesCheckbox3" class="form-check-label">Electricity</label>
           </div>
-        </div>
-
-        <!-- ===Fuel Oil=== -->
-        <div id="fuelOilUtilities" class="spacing-container">
-          <label for="fuelOilFields">Fuel Oil</label>
-          <div id="fuelOilFields" class="row">
-            <div class="col-md-4">
-              <label for="fuelOilAmount">Amount</label>
-              <input id="fuelOilAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="fuelOilUnits">Units</label>
-              <select id="fuelOilUnits" class="form-control">
-                <option id="fuelOilUSD" value="USD">USD ($)</option>
-                <option id="fuelOilkWh" value="kWh">kWh</option>
-                <option id="fuelOilGallons" value="Gallons">US gallons</option>
-                <option id="fuelOilLitres" value="Litres">litres</option>
-                <option id="fuelOilMetricTons" value="MetricTons">metric tons</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox4" class="form-check-input" type="checkbox" value="FuelOil">
+            <label for="utilitiesCheckbox4" class="form-check-label">Fuel Oil</label>
           </div>
-        </div>
-
-        <!-- ===Propane=== -->
-        <div id="propaneUtilities" class="spacing-container">
-          <label for="propaneFields">Propane</label>
-          <div id="propaneFields" class="row">
-            <div class="col-md-4">
-              <label for="propaneAmount">Amount</label>
-              <input id="propaneAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="propaneUnits">Units</label>
-              <select id="propaneUnits" class="form-control">
-                <option id="propaneUSD" value="USD">USD ($)</option>
-                <option id="propanekWh" value="kWh">kWh</option>
-                <option id="propaneGallons" value="Gallons">US gallons</option>
-                <option id="propaneLitres" value="Litres">litres</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox5" class="form-check-input" type="checkbox" value="Propane">
+            <label for="utilitiesCheckbox5" class="form-check-label">Propane</label>
           </div>
-        </div>
-
-        <!-- ===Coal=== -->
-        <div id="coalUtilities" class="spacing-container">
-          <label for="coalFields">Coal</label>
-          <div id="coalFields" class="row">
-            <div class="col-md-4">
-              <label for="coalAmount">Amount</label>
-              <input id="coalAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="coalUnits">Units</label>
-              <select id="coalUnits" class="form-control">
-                <option id="coalUSD" value="USD">USD ($)</option>
-                <option id="coalkWh" value="kWh">kWh</option>
-                <option id="coalMetricTons" value="MetricTons">metric tons</option>
-                <option id="coal10kg" value="10kg">x10kg bags</option>
-                <option id="coal20kg" value="20kg">x20kg bags</option>
-                <option id="coal25kg" value="25kg">x25kg bags</option>
-                <option id="coal50kg" value="50kg">x50kg bags</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox6" class="form-check-input" type="checkbox" value="Coal">
+            <label for="utilitiesCheckbox6" class="form-check-label">Coal</label>
           </div>
-        </div>
-
-        <!-- ===LPG=== -->
-        <div id="lpgUtilities" class="spacing-container">
-          <label for="lpgFields">LPG</label>
-          <div id="lpgFields" class="row">
-            <div class="col-md-4">
-              <label for="lpgAmount">Amount</label>
-              <input id="lpgAmount" class="form-control" type="text" placeholder="Amount">
-            </div>
-            <div class="col-md-4">
-              <label for="lpgUnits">Units</label>
-              <select id="lpgUnits" class="form-control">
-                <option id="lpgUSD" value="USD">USD ($)</option>
-                <option id="lpgkWh" value="kWh">kWh</option>
-                <option id="lpgTherms" value="Therms">therms</option>
-                <option id="lpgGallons" value="Gallons">US gallons</option>
-                <option id="lpgLitres" value="Litres">litres</option>
-              </select>
-            </div>
+          <div class="form-check form-check-inline">
+            <input id="utilitiesCheckbox7" class="form-check-input" type="checkbox" value="LPG">
+            <label for="utilitiesCheckbox7" class="form-check-label">LPG</label>
           </div>
-        </div>
-        <div class="spacing-container">
-          <div class="assessmentContinue">
-            <button id="continueHome" class="btn btn-primary" type="button">Continue</button>
-          </div>
-        </div>
+        </fieldset>
       </div>
 
-      <!-- ===Transportation Tab=== -->
-      <div id="trans-assessment" class="tab-pane container">
-
-        <!-- ===Cars=== -->
-        <div id="numVehicles" class="row spacing-container">
+      <!-- ===Heating Source=== -->
+      <div id="heatingSourceUtilities" class="spacing-container">
+        <div id="heatingSourceFields" class="row">
           <div class="col-md-4">
-            <label for="numVehiclesSelector">How many vehicles do you have?</label>
-            <select id="numVehiclesSelector" class="form-control">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+            <label for="heatingSourceSelect">Heating Source</label>
+            <select id="heatingSourceSelect" class="form-control">
+              <option value="none" selected disabled>----</option>
+              <option id="heatingNaturalGas" value="NaturalGas">Natural Gas</option>
+              <option id="heatingElectricity" value="Electricity">Electricity</option>
+              <option id="heatingFuelOil" value="FuelOil">Fuel Oil</option>
+              <option id="heatingPropane" value="Propane">Propane</option>
+              <option id="heatingCoal" value="Coal">Coal</option>
+              <option id="heatingLPG" value="LPG">LPG</option>
             </select>
           </div>
         </div>
-        <div id="vehicle1" class="spacing-container">
-          <label for="vehicle1fields">Vehicle 1</label>
-          <div id="vehicle1fields" class="row">
-            <div class="col-md-4">
-              <label for="milesDriven1">On average, how many miles you drive per week:</label>
-              <!-- Need way to mark if a car is an electric vehicle -->
-              <input id="milesDriven1" class="form-control" type="text" placeholder="miles per week">
-            </div>
-            <div class="col-md-4">
-              <label for="mileage1">Average gas mileage:</label>
-              <!-- put units at end of input (input group...) -->
-              <input id="mileage1" class="form-control" type="text" placeholder="mpg">
-            </div>
-          </div>
-        </div>
-        <div id="vehicle2" class="spacing-container">
-          <label for="vehicle2fields">Vehicle 2</label>
-          <div id="vehicle2fields" class="row">
-            <div class="col-md-4">
-              <label for="milesDriven2">On average, how many miles you drive per week:</label>
-              <!-- Need way to mark if a car is an electric vehicle -->
-              <input id="milesDriven2" class="form-control" type="text" placeholder="miles per week">
-            </div>
-            <div class="col-md-4">
-              <label for="mileage2">Average gas mileage:</label>
-              <!-- put units at end of input (input group...) -->
-              <input id="mileage2" class="form-control" type="text" placeholder="mpg">
-            </div>
-          </div>
-        </div>
-        <div id="vehicle3" class="spacing-container">
-          <label for="vehicle3fields">Vehicle 3</label>
-          <div id="vehicle3fields" class="row">
-            <div class="col-md-4">
-              <label for="milesDriven3">On average, how many miles you drive per week:</label>
-              <!-- Need way to mark if a car is an electric vehicle -->
-              <input id="milesDriven3" class="form-control" type="text" placeholder="miles per week">
-            </div>
-            <div class="col-md-4">
-              <label for="mileage3">Average gas mileage:</label>
-              <!-- put units at end of input (input group...) -->
-              <input id="mileage3" class="form-control" type="text" placeholder="mpg">
-            </div>
-          </div>
-        </div>
-        <div id="vehicle4" class="spacing-container">
-          <label for="vehicle4fields">Vehicle 4</label>
-          <div id="vehicle4fields" class="row">
-            <div class="col-md-4">
-              <label for="milesDriven4">On average, how many miles you drive per week:</label>
-              <!-- Need way to mark if a car is an electric vehicle -->
-              <input id="milesDriven4" class="form-control" type="text" placeholder="miles per week">
-            </div>
-            <div class="col-md-4">
-              <label for="mileage4">Average gas mileage:</label>
-              <!-- put units at end of input (input group...) -->
-              <input id="mileage4" class="form-control" type="text" placeholder="mpg">
-            </div>
-          </div>
-        </div>
-        <div id="vehicle5" class="spacing-container">
-          <label for="vehicle5fields">Vehicle 5</label>
-          <div id="vehicle5fields" class="row">
-            <div class="col-md-4">
-              <label for="milesDriven5">On average, how many miles you drive per week:</label>
-              <!-- Need way to mark if a car is an electric vehicle -->
-              <input id="milesDriven5" class="form-control" type="text" placeholder="miles per week">
-            </div>
-            <div class="col-md-4">
-              <label for="mileage5">Average gas mileage:</label>
-              <!-- put units at end of input (input group...) -->
-              <input id="mileage5" class="form-control" type="text" placeholder="mpg">
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <div class="hr spacing-container"></div>
-
-        <!-- ===Public Transit=== -->
-        <div id="publicTransit" class="row spacing-container">
+      <!-- ===Natural Gas=== -->
+      <div id="naturalGasUtilities" class="spacing-container">
+        <label for="naturalGasFields">Natural Gas</label>
+        <div id="naturalGasFields" class="row">
           <div class="col-md-4">
-            <label for="publicTransitSelector">What forms of public transit do you use?</label>
-            <select id="publicTransitSelector" class="form-control" multiple size="7">
-              <option value="bus">Bus</option>
-              <option value="coach">Coach</option>
-              <option value="localTrain">Local/Commuter Train</option>
-              <option value="longDistTrain">Long Distance Train</option>
-              <option value="tram">Tram</option>
-              <option value="subway">Subway</option>
-              <option value="taxi">Taxi/Uber/Lyft</option>
+            <label for="naturalGasAmount">Amount</label>
+            <input id="naturalGasAmount" class="form-control" type="text" placeholder="Amount">
+          </div>
+          <div class="col-md-4">
+            <label for="naturalGasUnits">Units</label>
+            <select id="naturalGasUnits" class="form-control">
+              <option id="naturalGasUSD" value="USD">USD ($)</option>
+              <option id="naturalGasCubicFeet" value="CubicFeet">Thousand Cubic Feet</option>
+              <option id="naturalGaskWh" value="kWh">kWh</option>
+              <option id="naturalGasTherms" value="Therms">therms</option>
             </select>
           </div>
         </div>
-        <div id="bus" class="spacing-container">
-          <label for="busFields">Bus</label>
-          <div id="busFields" class="row">
-            <div class="col-md-4">
-              <label for="busMiles">On average, miles you ride per week:</label>
-              <input id="busMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="coach" class="spacing-container">
-          <label for="coachFields">Coach</label>
-          <div id="coachFields" class="row">
-            <div class="col-md-4">
-              <label for="coachMiles">On average, miles you ride per week:</label>
-              <input id="coachMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="localTrain" class="spacing-container">
-          <label for="localTrainFields">Local/Commuter Train</label>
-          <div id="localTrainFields" class="row">
-            <div class="col-md-4">
-              <label for="localTrainMiles">On average, miles you ride per week:</label>
-              <input id="localTrainMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="longDistTrain" class="spacing-container">
-          <label for="longDistTrainFields">Long Distance Train</label>
-          <div id="longDistTrainFields" class="row">
-            <div class="col-md-4">
-              <label for="longDistTrainMiles">On average, miles you ride per week:</label>
-              <input id="longDistTrainMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="tram" class="spacing-container">
-          <label for="tramFields">Tram</label>
-          <div id="tramFields" class="row">
-            <div class="col-md-4">
-              <label for="tramMiles">On average, miles you ride per week:</label>
-              <input id="tramMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="subway" class="spacing-container">
-          <label for="subwayFields">Subway</label>
-          <div id="subwayFields" class="row">
-            <div class="col-md-4">
-              <label for="subwayMiles">On average, miles you ride per week:</label>
-              <input id="subwayMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-        <div id="taxi" class="spacing-container">
-          <label for="taxiFields">Taxi/Uber/Lyft</label>
-          <div id="taxiFields" class="row">
-            <div class="col-md-4">
-              <label for="taxiMiles">On average, miles you ride per week:</label>
-              <input id="taxiMiles" class="form-control" type="text" placeholder="miles per week">
-            </div>
-          </div>
-        </div>
-
-        <div class="hr spacing-container"></div>
-
-        <!-- ===Flights=== -->
-        <div id="flights" class="spacing-container">
-          <label for="flightFields">Flights</label>
-          <fieldset id="flightFields" class="form-group">
-            <div id="flightTypeRadio" class="row">
-              <div class="col-md-4">
-                <div class="form-check form-check-inline">
-                  <input id="roundTripCheck" class="form-check-input" type="radio" name="flightType" value="roundTrip" checked>
-                  <label for="roundTripCheck" class="form-check-label">
-                    Round Trip
-                  </label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input id="oneWayCheck" class="form-check-input" type="radio" name="flightType" value="oneWay">
-                  <label for="oneWayCheck" class="form-check-label">
-                    One way
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div id="fromDestination" class="row">
-              <div class="col-md-4">
-                <label for="fromDestinationSelector">From:</label>
-                <select id="fromDestinationSelector" class="form-control">
-                  <option value="none" selected disabled>---</option>
-                  <option value="ATL">ATL</option>
-                  <option value="LAX">LAX</option>
-                  <option value="ORD">ORD</option>
-                  <option value="DFW">DFW</option>
-                  <option value="JFK">JFK</option>
-                  <option value="DEN">DEN</option>
-                  <option value="SFO">SFO</option>
-                  <option value="LAS">LAS</option>
-                  <option value="CLT">CLT</option>
-                  <option value="SEA">SEA</option>
-                  <option value="PHX">PHX</option>
-                  <option value="MIA">MIA</option>
-                  <option value="MCO">MCO</option>
-                  <option value="IAH">IAH</option>
-                  <option value="EWR">EWR</option>
-                  <option value="MSP">MSP</option>
-                  <option value="BOS">BOS</option>
-                  <option value="DTW">DTW</option>
-                  <option value="PHL">PHL</option>
-                  <option value="LGA">LGA</option>
-                  <option value="FLL">FLL</option>
-                  <option value="BWI">BWI</option>
-                  <option value="DCA">DCA</option>
-                  <option value="SLC">SLC</option>
-                  <option value="MDW">MDW</option>
-                  <option value="IAD">IAD</option>
-                  <option value="SAN">SAN</option>
-                  <option value="HNL">HNL</option>
-                  <option value="TPA">TPA</option>
-                  <option value="PDX">PDX</option>
-                </select>
-              </div>
-            </div>
-            <div id="toDestination" class="row">
-              <div class="col-md-4">
-                <label for="toDestinationSelector">To:</label>
-                <select id="toDestinationSelector" class="form-control">
-                  <option value="none" selected disabled>---</option>
-                  <option value="ATL">ATL</option>
-                  <option value="LAX">LAX</option>
-                  <option value="ORD">ORD</option>
-                  <option value="DFW">DFW</option>
-                  <option value="JFK">JFK</option>
-                  <option value="DEN">DEN</option>
-                  <option value="SFO">SFO</option>
-                  <option value="LAS">LAS</option>
-                  <option value="CLT">CLT</option>
-                  <option value="SEA">SEA</option>
-                  <option value="PHX">PHX</option>
-                  <option value="MIA">MIA</option>
-                  <option value="MCO">MCO</option>
-                  <option value="IAH">IAH</option>
-                  <option value="EWR">EWR</option>
-                  <option value="MSP">MSP</option>
-                  <option value="BOS">BOS</option>
-                  <option value="DTW">DTW</option>
-                  <option value="PHL">PHL</option>
-                  <option value="LGA">LGA</option>
-                  <option value="FLL">FLL</option>
-                  <option value="BWI">BWI</option>
-                  <option value="DCA">DCA</option>
-                  <option value="SLC">SLC</option>
-                  <option value="MDW">MDW</option>
-                  <option value="IAD">IAD</option>
-                  <option value="SAN">SAN</option>
-                  <option value="HNL">HNL</option>
-                  <option value="TPA">TPA</option>
-                  <option value="PDX">PDX</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-          <button id="addFlight" class="btn" type="button">Add Flight</button>
-        </div>
-        <div id="flightsTaken">
-          <!--  -->
-        </div>
-        <div class="spacing-container">
-          <div class="assessmentBack">
-            <button id="backTrans" class="btn btn-primary" type="button">Back</button>
-          </div>
-          <div class="assessmentContinue">
-            <button id="continueTrans" class="btn btn-primary" type="button">Continue</button>
-          </div>
-        </div>
       </div>
 
-      <!-- ===Diet Tab=== -->
-      <div id="diet-assessment" class="tab-pane container">
-        <div id="dietLocal" class="row spacing-container">
+      <!-- ===Electricity=== -->
+      <div id="electricityUtilities" class="spacing-container">
+        <label for="electricityFields">Electricity</label>
+        <div id="electricityFields" class="row">
           <div class="col-md-4">
-            <label for="locallySourced"> What percentage of your food is locally sourced? </label>
-            <input id="locallySourced" class="form-control" type="text" placeholder="Enter a Number">
+            <label for="electricityAmount">Amount</label>
+            <input id="electricityAmount" class="form-control" type="text" placeholder="Amount">
           </div>
-        </div>
-        <div id="dietRestrictions" class="row spacing-container">
           <div class="col-md-4">
-            <label for="dietaryStyle"> What is your dietary style? </label>
-            <select id="dietSelection" class="form-control">
-              <option id="noSelection" value="noSelection" selected disabled>----</option>
-              <option id="noRestrictions" value="noRestrictions">No Restrictions (omnivore)</option>
-              <option id="vegetarian" value="vegetarian">Vegetarian</option>
-              <option id="vegan" value="vegan">Vegan</option>
+            <label for="electricityUnits">Units</label>
+            <select id="electricityUnits" class="form-control">
+              <option id="electricityUSD" value="USD">USD ($)</option>
+              <option id="electricitykWh" value="kWh">kWh</option>
             </select>
           </div>
         </div>
-        <div id="mealsPerDay" class="row spacing-container">
+      </div>
+
+      <!-- ===Fuel Oil=== -->
+      <div id="fuelOilUtilities" class="spacing-container">
+        <label for="fuelOilFields">Fuel Oil</label>
+        <div id="fuelOilFields" class="row">
           <div class="col-md-4">
-            <label for="mealsPerDay"> How many of your meals each day include meat? </label>
-            <input id="mealsPerDayInput" class="form-control" type="text" placeholder="Enter a Number">
+            <label for="fuelOilAmount">Amount</label>
+            <input id="fuelOilAmount" class="form-control" type="text" placeholder="Amount">
           </div>
-        </div>
-        <div id="typeOfMeat" class="row spacing-container">
           <div class="col-md-4">
-            <label for="typeOfMeat"> Of the meat you consume, what percentage is beef, lamb, or goat? </label>
-            <input id="typeOfMeatInput" class="form-control" type="text" placeholder="Enter a Number">
-          </div>
-        </div>
-        <div class="spacing-container">
-          <div class="assessmentBack">
-            <button id="backDiet" class="btn btn-primary" type="button">Back</button>
-          </div>
-          <div class="assessmentContinue">
-            <button id="continueDiet" class="btn btn-primary" type="button">Continue</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===Results Tab=== -->
-      <div id="results-assessment" class="tab-pane container">
-        <div class="spacing-container">
-          Results
-        </div>
-        <div class="spacing-container">
-          <div class="assessmentBack">
-            <button id="backResults" class="btn btn-primary" type="button">Back</button>
+            <label for="fuelOilUnits">Units</label>
+            <select id="fuelOilUnits" class="form-control">
+              <option id="fuelOilUSD" value="USD">USD ($)</option>
+              <option id="fuelOilkWh" value="kWh">kWh</option>
+              <option id="fuelOilGallons" value="Gallons">US gallons</option>
+              <option id="fuelOilLitres" value="Litres">litres</option>
+              <option id="fuelOilMetricTons" value="MetricTons">metric tons</option>
+            </select>
           </div>
         </div>
       </div>
 
+      <!-- ===Propane=== -->
+      <div id="propaneUtilities" class="spacing-container">
+        <label for="propaneFields">Propane</label>
+        <div id="propaneFields" class="row">
+          <div class="col-md-4">
+            <label for="propaneAmount">Amount</label>
+            <input id="propaneAmount" class="form-control" type="text" placeholder="Amount">
+          </div>
+          <div class="col-md-4">
+            <label for="propaneUnits">Units</label>
+            <select id="propaneUnits" class="form-control">
+              <option id="propaneUSD" value="USD">USD ($)</option>
+              <option id="propanekWh" value="kWh">kWh</option>
+              <option id="propaneGallons" value="Gallons">US gallons</option>
+              <option id="propaneLitres" value="Litres">litres</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===Coal=== -->
+      <div id="coalUtilities" class="spacing-container">
+        <label for="coalFields">Coal</label>
+        <div id="coalFields" class="row">
+          <div class="col-md-4">
+            <label for="coalAmount">Amount</label>
+            <input id="coalAmount" class="form-control" type="text" placeholder="Amount">
+          </div>
+          <div class="col-md-4">
+            <label for="coalUnits">Units</label>
+            <select id="coalUnits" class="form-control">
+              <option id="coalUSD" value="USD">USD ($)</option>
+              <option id="coalkWh" value="kWh">kWh</option>
+              <option id="coalMetricTons" value="MetricTons">metric tons</option>
+              <option id="coal10kg" value="10kg">x10kg bags</option>
+              <option id="coal20kg" value="20kg">x20kg bags</option>
+              <option id="coal25kg" value="25kg">x25kg bags</option>
+              <option id="coal50kg" value="50kg">x50kg bags</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===LPG=== -->
+      <div id="lpgUtilities" class="spacing-container">
+        <label for="lpgFields">LPG</label>
+        <div id="lpgFields" class="row">
+          <div class="col-md-4">
+            <label for="lpgAmount">Amount</label>
+            <input id="lpgAmount" class="form-control" type="text" placeholder="Amount">
+          </div>
+          <div class="col-md-4">
+            <label for="lpgUnits">Units</label>
+            <select id="lpgUnits" class="form-control">
+              <option id="lpgUSD" value="USD">USD ($)</option>
+              <option id="lpgkWh" value="kWh">kWh</option>
+              <option id="lpgTherms" value="Therms">therms</option>
+              <option id="lpgGallons" value="Gallons">US gallons</option>
+              <option id="lpgLitres" value="Litres">litres</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="spacing-container">
+        <div class="assessmentContinue">
+          <button id="continueHome" class="btn btn-primary" type="button">Continue</button>
+        </div>
+      </div>
+      <div class="clearFloats spacing-container"></div>
     </div>
-  </form>
-</div>
 
-<!-- Login modal -->
-<div id="login" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Login form...</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- ===Transportation Tab=== -->
+    <div id="trans-assessment" class="tab-pane container">
 
-<div id="signup" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign up</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <!-- ===Cars=== -->
+      <div id="numVehicles" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="numVehiclesSelector">How many vehicles do you have?</label>
+          <select id="numVehiclesSelector" class="form-control">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
       </div>
-      <div class="modal-body">
-        <p>Sign on up!</p>
+      <div id="vehicle1" class="spacing-container">
+        <label for="vehicle1fields">Vehicle 1</label>
+        <div id="vehicle1fields" class="row">
+          <div class="col-md-4">
+            <label for="milesDriven1">On average, how many miles you drive per week:</label>
+            <!-- Need way to mark if a car is an electric vehicle -->
+            <input id="milesDriven1" class="form-control" type="text" placeholder="miles per week">
+          </div>
+          <div class="col-md-4">
+            <label for="mileage1">Average gas mileage:</label>
+            <!-- put units at end of input (input group...) -->
+            <input id="mileage1" class="form-control" type="text" placeholder="mpg">
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Sign up</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div id="vehicle2" class="spacing-container">
+        <label for="vehicle2fields">Vehicle 2</label>
+        <div id="vehicle2fields" class="row">
+          <div class="col-md-4">
+            <label for="milesDriven2">On average, how many miles you drive per week:</label>
+            <!-- Need way to mark if a car is an electric vehicle -->
+            <input id="milesDriven2" class="form-control" type="text" placeholder="miles per week">
+          </div>
+          <div class="col-md-4">
+            <label for="mileage2">Average gas mileage:</label>
+            <!-- put units at end of input (input group...) -->
+            <input id="mileage2" class="form-control" type="text" placeholder="mpg">
+          </div>
+        </div>
       </div>
+      <div id="vehicle3" class="spacing-container">
+        <label for="vehicle3fields">Vehicle 3</label>
+        <div id="vehicle3fields" class="row">
+          <div class="col-md-4">
+            <label for="milesDriven3">On average, how many miles you drive per week:</label>
+            <!-- Need way to mark if a car is an electric vehicle -->
+            <input id="milesDriven3" class="form-control" type="text" placeholder="miles per week">
+          </div>
+          <div class="col-md-4">
+            <label for="mileage3">Average gas mileage:</label>
+            <!-- put units at end of input (input group...) -->
+            <input id="mileage3" class="form-control" type="text" placeholder="mpg">
+          </div>
+        </div>
+      </div>
+      <div id="vehicle4" class="spacing-container">
+        <label for="vehicle4fields">Vehicle 4</label>
+        <div id="vehicle4fields" class="row">
+          <div class="col-md-4">
+            <label for="milesDriven4">On average, how many miles you drive per week:</label>
+            <!-- Need way to mark if a car is an electric vehicle -->
+            <input id="milesDriven4" class="form-control" type="text" placeholder="miles per week">
+          </div>
+          <div class="col-md-4">
+            <label for="mileage4">Average gas mileage:</label>
+            <!-- put units at end of input (input group...) -->
+            <input id="mileage4" class="form-control" type="text" placeholder="mpg">
+          </div>
+        </div>
+      </div>
+      <div id="vehicle5" class="spacing-container">
+        <label for="vehicle5fields">Vehicle 5</label>
+        <div id="vehicle5fields" class="row">
+          <div class="col-md-4">
+            <label for="milesDriven5">On average, how many miles you drive per week:</label>
+            <!-- Need way to mark if a car is an electric vehicle -->
+            <input id="milesDriven5" class="form-control" type="text" placeholder="miles per week">
+          </div>
+          <div class="col-md-4">
+            <label for="mileage5">Average gas mileage:</label>
+            <!-- put units at end of input (input group...) -->
+            <input id="mileage5" class="form-control" type="text" placeholder="mpg">
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <!-- ===Public Transit=== -->
+      <div id="publicTransit" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="publicTransitSelector">What forms of public transit do you use?</label>
+          <select id="publicTransitSelector" class="form-control" multiple size="7">
+            <option value="bus">Bus</option>
+            <option value="coach">Coach</option>
+            <option value="localTrain">Local/Commuter Train</option>
+            <option value="longDistTrain">Long Distance Train</option>
+            <option value="tram">Tram</option>
+            <option value="subway">Subway</option>
+            <option value="taxi">Taxi/Uber/Lyft</option>
+          </select>
+        </div>
+      </div>
+      <div id="bus" class="spacing-container">
+        <label for="busFields">Bus</label>
+        <div id="busFields" class="row">
+          <div class="col-md-4">
+            <label for="busMiles">On average, miles you ride per week:</label>
+            <input id="busMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="coach" class="spacing-container">
+        <label for="coachFields">Coach</label>
+        <div id="coachFields" class="row">
+          <div class="col-md-4">
+            <label for="coachMiles">On average, miles you ride per week:</label>
+            <input id="coachMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="localTrain" class="spacing-container">
+        <label for="localTrainFields">Local/Commuter Train</label>
+        <div id="localTrainFields" class="row">
+          <div class="col-md-4">
+            <label for="localTrainMiles">On average, miles you ride per week:</label>
+            <input id="localTrainMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="longDistTrain" class="spacing-container">
+        <label for="longDistTrainFields">Long Distance Train</label>
+        <div id="longDistTrainFields" class="row">
+          <div class="col-md-4">
+            <label for="longDistTrainMiles">On average, miles you ride per week:</label>
+            <input id="longDistTrainMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="tram" class="spacing-container">
+        <label for="tramFields">Tram</label>
+        <div id="tramFields" class="row">
+          <div class="col-md-4">
+            <label for="tramMiles">On average, miles you ride per week:</label>
+            <input id="tramMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="subway" class="spacing-container">
+        <label for="subwayFields">Subway</label>
+        <div id="subwayFields" class="row">
+          <div class="col-md-4">
+            <label for="subwayMiles">On average, miles you ride per week:</label>
+            <input id="subwayMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+      <div id="taxi" class="spacing-container">
+        <label for="taxiFields">Taxi/Uber/Lyft</label>
+        <div id="taxiFields" class="row">
+          <div class="col-md-4">
+            <label for="taxiMiles">On average, miles you ride per week:</label>
+            <input id="taxiMiles" class="form-control" type="text" placeholder="miles per week">
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <!-- ===Flights=== -->
+      <div id="flights" class="spacing-container">
+        <label for="flightFields">Flights</label>
+        <fieldset id="flightFields" class="form-group">
+          <div id="flightTypeRadio" class="row">
+            <div class="col-md-4">
+              <div class="form-check form-check-inline">
+                <input id="roundTripCheck" class="form-check-input" type="radio" name="flightType" value="roundTrip" checked>
+                <label for="roundTripCheck" class="form-check-label">
+                  Round Trip
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input id="oneWayCheck" class="form-check-input" type="radio" name="flightType" value="oneWay">
+                <label for="oneWayCheck" class="form-check-label">
+                  One way
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="fromDestination" class="row">
+            <div class="col-md-4">
+              <label for="fromDestinationSelector">From:</label>
+              <select id="fromDestinationSelector" class="form-control">
+                <option value="none" selected disabled>---</option>
+                <option value="ATL">ATL</option>
+                <option value="LAX">LAX</option>
+                <option value="ORD">ORD</option>
+                <option value="DFW">DFW</option>
+                <option value="JFK">JFK</option>
+                <option value="DEN">DEN</option>
+                <option value="SFO">SFO</option>
+                <option value="LAS">LAS</option>
+                <option value="CLT">CLT</option>
+                <option value="SEA">SEA</option>
+                <option value="PHX">PHX</option>
+                <option value="MIA">MIA</option>
+                <option value="MCO">MCO</option>
+                <option value="IAH">IAH</option>
+                <option value="EWR">EWR</option>
+                <option value="MSP">MSP</option>
+                <option value="BOS">BOS</option>
+                <option value="DTW">DTW</option>
+                <option value="PHL">PHL</option>
+                <option value="LGA">LGA</option>
+                <option value="FLL">FLL</option>
+                <option value="BWI">BWI</option>
+                <option value="DCA">DCA</option>
+                <option value="SLC">SLC</option>
+                <option value="MDW">MDW</option>
+                <option value="IAD">IAD</option>
+                <option value="SAN">SAN</option>
+                <option value="HNL">HNL</option>
+                <option value="TPA">TPA</option>
+                <option value="PDX">PDX</option>
+              </select>
+            </div>
+          </div>
+          <div id="toDestination" class="row">
+            <div class="col-md-4">
+              <label for="toDestinationSelector">To:</label>
+              <select id="toDestinationSelector" class="form-control">
+                <option value="none" selected disabled>---</option>
+                <option value="ATL">ATL</option>
+                <option value="LAX">LAX</option>
+                <option value="ORD">ORD</option>
+                <option value="DFW">DFW</option>
+                <option value="JFK">JFK</option>
+                <option value="DEN">DEN</option>
+                <option value="SFO">SFO</option>
+                <option value="LAS">LAS</option>
+                <option value="CLT">CLT</option>
+                <option value="SEA">SEA</option>
+                <option value="PHX">PHX</option>
+                <option value="MIA">MIA</option>
+                <option value="MCO">MCO</option>
+                <option value="IAH">IAH</option>
+                <option value="EWR">EWR</option>
+                <option value="MSP">MSP</option>
+                <option value="BOS">BOS</option>
+                <option value="DTW">DTW</option>
+                <option value="PHL">PHL</option>
+                <option value="LGA">LGA</option>
+                <option value="FLL">FLL</option>
+                <option value="BWI">BWI</option>
+                <option value="DCA">DCA</option>
+                <option value="SLC">SLC</option>
+                <option value="MDW">MDW</option>
+                <option value="IAD">IAD</option>
+                <option value="SAN">SAN</option>
+                <option value="HNL">HNL</option>
+                <option value="TPA">TPA</option>
+                <option value="PDX">PDX</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+        <button id="addFlight" class="btn" type="button">Add Flight</button>
+      </div>
+      <div id="flightsTaken">
+        <!--  -->
+      </div>
+      <div class="spacing-container">
+        <div class="assessmentBack">
+          <button id="backTrans" class="btn btn-primary" type="button">Back</button>
+        </div>
+        <div class="assessmentContinue">
+          <button id="continueTrans" class="btn btn-primary" type="button">Continue</button>
+        </div>
+      </div>
+      <div class="clearFloats spacing-container"></div>
     </div>
+
+    <!-- ===Diet Tab=== -->
+    <div id="diet-assessment" class="tab-pane container">
+      <div id="dietLocal" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="locallySourced"> What percentage of your food is locally sourced? </label>
+          <input id="locallySourced" class="form-control" type="text" placeholder="Enter a Number">
+        </div>
+      </div>
+      <div id="dietRestrictions" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="dietaryStyle"> What is your dietary style? </label>
+          <select id="dietSelection" class="form-control">
+            <option id="noSelection" value="noSelection" selected disabled>----</option>
+            <option id="noRestrictions" value="noRestrictions">No Restrictions (omnivore)</option>
+            <option id="vegetarian" value="vegetarian">Vegetarian</option>
+            <option id="vegan" value="vegan">Vegan</option>
+          </select>
+        </div>
+      </div>
+      <div id="mealsPerDay" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="mealsPerDay"> How many of your meals each day include meat? </label>
+          <input id="mealsPerDayInput" class="form-control" type="text" placeholder="Enter a Number">
+        </div>
+      </div>
+      <div id="typeOfMeat" class="row spacing-container">
+        <div class="col-md-4">
+          <label for="typeOfMeat"> Of the meat you consume, what percentage is beef, lamb, or goat? </label>
+          <input id="typeOfMeatInput" class="form-control" type="text" placeholder="Enter a Number">
+        </div>
+      </div>
+      <div class="spacing-container">
+        <div class="assessmentBack">
+          <button id="backDiet" class="btn btn-primary" type="button">Back</button>
+        </div>
+        <div class="assessmentContinue">
+          <button id="continueDiet" class="btn btn-primary" type="button">Continue</button>
+        </div>
+      </div>
+      <div class="clearFloats spacing-container"></div>
+    </div>
+
+    <!-- ===Results Tab=== -->
+    <div id="results-assessment" class="tab-pane container">
+      <div class="row spacing-container">
+        <div id="resultsChart" class="col-md-8"></div>
+        <div id="resultsIfEveryoneWasLikeYou" class="col-md-4">
+          <div class="card ifEveryoneWasLikeYouCard">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card ifEveryoneWasLikeYouCard">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row spacing-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="spacing-container">
+        <div class="assessmentBack">
+          <button id="backResults" class="btn btn-primary" type="button">Back</button>
+        </div>
+        <div class="assessmentContinue">
+          <button id="continueResults" class="btn btn-primary" type="button">Continue</button>
+        </div>
+      </div>
+      <div class="clearFloats spacing-container"></div>
+    </div>
+
+    <!-- ===Goals Tab=== -->
+    <div id="goals-assessment" class="tab-pane container">
+      <div class="row spacing-container">
+        Goals
+      </div>
+      <div class="spacing-container">
+        <div class="assessmentBack">
+          <button id="goalsResults" class="btn btn-primary" type="button">Back</button>
+        </div>
+      </div>
+      <div class="clearFloats spacing-container"></div>
+    </div>
+
   </div>
 </div>
 
@@ -645,6 +745,7 @@
 <script src="js/jquery-3.2.1.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="highcharts-v6.0.7/highcharts.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 

@@ -12,9 +12,9 @@
 
 /* COLORS
     - navbar             #498096
-    -                    #4A7C59
-    - default p text     #596157
-    -                    #C8D5B9
+    - assessment tabs    #4A7C59
+    - borders            #596157
+    - tab text           #C8D5B9
     -                    #52414C
 */
 
@@ -32,10 +32,11 @@ nav {
 }
 
 .spacing-container {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .hr {
+    margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
     border-top: 1px solid #596157;
@@ -46,8 +47,15 @@ nav {
     clear: both;
 }
 
+.center_of_page {
+    width: 70%;
+    margin: 10px auto;
+    display: block;
+}
+
 /*  ===PAGES===  */
-#about-us {
+#about {
+    width: 800px;
 }
 
 #assessment {
@@ -60,13 +68,6 @@ nav {
 
 /*  ===ABOUT===  */
 
-.center_of_page {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 10px;
-    display: block;
-}
-
 #image_container {
     width: 500px;
     display: block;
@@ -78,7 +79,6 @@ nav {
 }
 
 .image_link {
-    /*position:relative;*/
     font-size: xx-small;
     text-decoration: none;
 }
@@ -94,10 +94,36 @@ nav {
 
 #about_description{
     padding-top: 10px;
-    text-align: center;
+}
+
+.aboutLoginButton {
+    margin-right: 50px;
+    float: right;
+}
+
+.aboutAssessmentButton {
+    margin-left: 50px;
+    float: left;
 }
 
 /*  ===ASSESSMENT===  */
+
+.nav-tabs .nav-link {
+    border: 1px solid #596157;
+    background: #4A7C59;
+    color: #C8D5B9;
+}
+
+.nav-tabs .nav-link.active {
+    /*border-color: #596157;*/
+    border-color: #596157 #596157 #FFF;
+}
+
+.tab-content {
+    border-left: 1px solid #596157;
+    border-bottom: 1px solid #596157;
+    border-right: 1px solid #596157;
+}
 
 .assessmentContinue {
     float: right;
@@ -108,6 +134,10 @@ nav {
 }
 
 /* Home Tab */
+
+#utilitiesCheckbox {
+    margin: 0;
+}
 
 #heatingSourceUtilities {
     display: none;
@@ -187,22 +217,22 @@ nav {
     display: none;
 }
 
-.cardSpacing {
+.flightCardSpacing {
     margin-top: 10px;
 }
 
-.cardBodySpacing {
+.flightCardBodySpacing {
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 0;
 }
 
-.cardTitleSpacing {
+.flightCardTitleSpacing {
     float: left;
 }
 
-.cardSubtitleSpacing {
+.flightCardSubtitleSpacing {
     margin-top: 3px;
     float: right;
 }
@@ -216,3 +246,17 @@ nav {
 #typeOfMeat {
     display: none;
 }
+
+/* Results Tab */
+
+#resultsChart{
+    min-width: 310px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+.ifEveryoneWasLikeYouCard {
+    width: 18rem;
+    margin: 10px auto;
+}
+
