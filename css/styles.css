@@ -193,10 +193,6 @@ nav {
     display: none;
 }
 
-#coach {
-    display: none;
-}
-
 #localTrain {
     display: none;
 }
@@ -251,12 +247,22 @@ nav {
 
 #resultsChart{
     min-width: 310px;
-    height: 400px;
+    height: 800px;
     margin: 10px auto;
 }
 
 .ifEveryoneWasLikeYouCard {
     width: 18rem;
     margin: 10px auto;
+}
+
+.card-img-top {
+    width: 75px;
+    margin: 20px auto 0 auto;
+}
+
+#ifEveryoneWasLikeYouHeader {
+    text-align: center;
+    margin: 20px 0;
 }
 

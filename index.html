@@ -8,6 +8,7 @@
   <meta name="description" content="Sustainable Graphics - carbon footprint calculator">
   <meta name="author" content="co-authored by Nisha Bhuva, Emily Blackman, Samuel Hill">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="open-iconic/font/css/open-iconic-bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -71,11 +72,11 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="loginUsername">Username</label>
-          <input class="form-control" id="loginUsername" placeholder="Enter username">
+          <input id="loginUsername" type="text" class="form-control" placeholder="Enter username">
         </div>
         <div class="form-group">
           <label for="loginPassword">Password</label>
-          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+          <input id="loginPassword" type="password" class="form-control" placeholder="Password">
         </div>
       </div>
       <div class="modal-footer">
@@ -97,7 +98,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="signupUsername">Username</label>
-          <input id="signupUsername" class="form-control" placeholder="Enter username">
+          <input id="signupUsername" type="text" class="form-control" placeholder="Enter username">
         </div>
         <div class="form-group">
           <label for="signupEmail">Email</label>
@@ -145,7 +146,10 @@
 
       <!-- ===Utilities=== -->
       <div id="utilities" class="spacing-container">
-        <label for="utilitiesCheckbox">Utilities</label>
+        <label for="utilitiesCheckbox">
+          Utilities &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+        </label>
         <fieldset id="utilitiesCheckbox" class="form-group">
           <div class="form-check form-check-inline">
             <input id="utilitiesCheckbox1" class="form-check-input" type="checkbox" value="Heat">
@@ -182,7 +186,10 @@
       <div id="heatingSourceUtilities" class="spacing-container">
         <div id="heatingSourceFields" class="row">
           <div class="col-md-4">
-            <label for="heatingSourceSelect">Heating Source</label>
+            <label for="heatingSourceSelect">
+              Heating Source &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="heatingSourceSelect" class="form-control">
               <option value="none" selected disabled>----</option>
               <option id="heatingNaturalGas" value="NaturalGas">Natural Gas</option>
@@ -201,11 +208,17 @@
         <label for="naturalGasFields">Natural Gas</label>
         <div id="naturalGasFields" class="row">
           <div class="col-md-4">
-            <label for="naturalGasAmount">Amount</label>
-            <input id="naturalGasAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="naturalGasAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="naturalGasAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="naturalGasUnits">Units</label>
+            <label for="naturalGasUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="naturalGasUnits" class="form-control">
               <option id="naturalGasUSD" value="USD">USD ($)</option>
               <option id="naturalGasCubicFeet" value="CubicFeet">Thousand Cubic Feet</option>
@@ -221,11 +234,17 @@
         <label for="electricityFields">Electricity</label>
         <div id="electricityFields" class="row">
           <div class="col-md-4">
-            <label for="electricityAmount">Amount</label>
-            <input id="electricityAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="electricityAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="electricityAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="electricityUnits">Units</label>
+            <label for="electricityUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="electricityUnits" class="form-control">
               <option id="electricityUSD" value="USD">USD ($)</option>
               <option id="electricitykWh" value="kWh">kWh</option>
@@ -239,8 +258,11 @@
         <label for="fuelOilFields">Fuel Oil</label>
         <div id="fuelOilFields" class="row">
           <div class="col-md-4">
-            <label for="fuelOilAmount">Amount</label>
-            <input id="fuelOilAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="fuelOilAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="fuelOilAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="fuelOilUnits">Units</label>
@@ -260,11 +282,17 @@
         <label for="propaneFields">Propane</label>
         <div id="propaneFields" class="row">
           <div class="col-md-4">
-            <label for="propaneAmount">Amount</label>
-            <input id="propaneAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="propaneAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="propaneAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="propaneUnits">Units</label>
+            <label for="propaneUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="propaneUnits" class="form-control">
               <option id="propaneUSD" value="USD">USD ($)</option>
               <option id="propanekWh" value="kWh">kWh</option>
@@ -280,11 +308,17 @@
         <label for="coalFields">Coal</label>
         <div id="coalFields" class="row">
           <div class="col-md-4">
-            <label for="coalAmount">Amount</label>
-            <input id="coalAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="coalAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="coalAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="coalUnits">Units</label>
+            <label for="coalUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="coalUnits" class="form-control">
               <option id="coalUSD" value="USD">USD ($)</option>
               <option id="coalkWh" value="kWh">kWh</option>
@@ -303,11 +337,17 @@
         <label for="lpgFields">LPG</label>
         <div id="lpgFields" class="row">
           <div class="col-md-4">
-            <label for="lpgAmount">Amount</label>
-            <input id="lpgAmount" class="form-control" type="text" placeholder="Amount">
+            <label for="lpgAmount">
+              Amount &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
+            <input id="lpgAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="lpgUnits">Units</label>
+            <label for="lpgUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+            </label>
             <select id="lpgUnits" class="form-control">
               <option id="lpgUSD" value="USD">USD ($)</option>
               <option id="lpgkWh" value="kWh">kWh</option>
@@ -349,12 +389,12 @@
           <div class="col-md-4">
             <label for="milesDriven1">On average, how many miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
-            <input id="milesDriven1" class="form-control" type="text" placeholder="miles per week">
+            <input id="milesDriven1" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
             <label for="mileage1">Average gas mileage:</label>
             <!-- put units at end of input (input group...) -->
-            <input id="mileage1" class="form-control" type="text" placeholder="mpg">
+            <input id="mileage1" class="form-control" type="number" placeholder="mpg">
           </div>
         </div>
       </div>
@@ -364,12 +404,12 @@
           <div class="col-md-4">
             <label for="milesDriven2">On average, how many miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
-            <input id="milesDriven2" class="form-control" type="text" placeholder="miles per week">
+            <input id="milesDriven2" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
             <label for="mileage2">Average gas mileage:</label>
             <!-- put units at end of input (input group...) -->
-            <input id="mileage2" class="form-control" type="text" placeholder="mpg">
+            <input id="mileage2" class="form-control" type="number" placeholder="mpg">
           </div>
         </div>
       </div>
@@ -379,12 +419,12 @@
           <div class="col-md-4">
             <label for="milesDriven3">On average, how many miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
-            <input id="milesDriven3" class="form-control" type="text" placeholder="miles per week">
+            <input id="milesDriven3" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
             <label for="mileage3">Average gas mileage:</label>
             <!-- put units at end of input (input group...) -->
-            <input id="mileage3" class="form-control" type="text" placeholder="mpg">
+            <input id="mileage3" class="form-control" type="number" placeholder="mpg">
           </div>
         </div>
       </div>
@@ -394,12 +434,12 @@
           <div class="col-md-4">
             <label for="milesDriven4">On average, how many miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
-            <input id="milesDriven4" class="form-control" type="text" placeholder="miles per week">
+            <input id="milesDriven4" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
             <label for="mileage4">Average gas mileage:</label>
             <!-- put units at end of input (input group...) -->
-            <input id="mileage4" class="form-control" type="text" placeholder="mpg">
+            <input id="mileage4" class="form-control" type="number" placeholder="mpg">
           </div>
         </div>
       </div>
@@ -409,12 +449,12 @@
           <div class="col-md-4">
             <label for="milesDriven5">On average, how many miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
-            <input id="milesDriven5" class="form-control" type="text" placeholder="miles per week">
+            <input id="milesDriven5" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
             <label for="mileage5">Average gas mileage:</label>
             <!-- put units at end of input (input group...) -->
-            <input id="mileage5" class="form-control" type="text" placeholder="mpg">
+            <input id="mileage5" class="form-control" type="number" placeholder="mpg">
           </div>
         </div>
       </div>
@@ -422,35 +462,41 @@
       <div class="hr"></div>
 
       <!-- ===Public Transit=== -->
-      <div id="publicTransit" class="row spacing-container">
-        <div class="col-md-4">
-          <label for="publicTransitSelector">What forms of public transit do you use?</label>
-          <select id="publicTransitSelector" class="form-control" multiple size="7">
-            <option value="bus">Bus</option>
-            <option value="coach">Coach</option>
-            <option value="localTrain">Local/Commuter Train</option>
-            <option value="longDistTrain">Long Distance Train</option>
-            <option value="tram">Tram</option>
-            <option value="subway">Subway</option>
-            <option value="taxi">Taxi/Uber/Lyft</option>
-          </select>
-        </div>
+      <div id="publicTransit" class="spacing-container">
+        <label for="publicTransitCheckbox">What forms of public transit do you use?</label>
+        <fieldset id="publicTransitCheckbox" class="form-group">
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox1" class="form-check-input" type="checkbox" value="bus">
+            <label for="publicTransitCheckbox1" class="form-check-label">Bus</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox2" class="form-check-input" type="checkbox" value="localTrain">
+            <label for="publicTransitCheckbox2" class="form-check-label">Local/Commuter Train</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox3" class="form-check-input" type="checkbox" value="longDistTrain">
+            <label for="publicTransitCheckbox3" class="form-check-label">Long Distance Train</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox4" class="form-check-input" type="checkbox" value="tram">
+            <label for="publicTransitCheckbox4" class="form-check-label">Tram</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox5" class="form-check-input" type="checkbox" value="subway">
+            <label for="publicTransitCheckbox5" class="form-check-label">Subway</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="publicTransitCheckbox6" class="form-check-input" type="checkbox" value="taxi">
+            <label for="publicTransitCheckbox6" class="form-check-label">Taxi/Uber/Lyft</label>
+          </div>
+        </fieldset>
       </div>
       <div id="bus" class="spacing-container">
         <label for="busFields">Bus</label>
         <div id="busFields" class="row">
           <div class="col-md-4">
             <label for="busMiles">On average, miles you ride per week:</label>
-            <input id="busMiles" class="form-control" type="text" placeholder="miles per week">
-          </div>
-        </div>
-      </div>
-      <div id="coach" class="spacing-container">
-        <label for="coachFields">Coach</label>
-        <div id="coachFields" class="row">
-          <div class="col-md-4">
-            <label for="coachMiles">On average, miles you ride per week:</label>
-            <input id="coachMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="busMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -459,7 +505,7 @@
         <div id="localTrainFields" class="row">
           <div class="col-md-4">
             <label for="localTrainMiles">On average, miles you ride per week:</label>
-            <input id="localTrainMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="localTrainMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -468,7 +514,7 @@
         <div id="longDistTrainFields" class="row">
           <div class="col-md-4">
             <label for="longDistTrainMiles">On average, miles you ride per week:</label>
-            <input id="longDistTrainMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="longDistTrainMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -477,7 +523,7 @@
         <div id="tramFields" class="row">
           <div class="col-md-4">
             <label for="tramMiles">On average, miles you ride per week:</label>
-            <input id="tramMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="tramMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -486,7 +532,7 @@
         <div id="subwayFields" class="row">
           <div class="col-md-4">
             <label for="subwayMiles">On average, miles you ride per week:</label>
-            <input id="subwayMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="subwayMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -495,7 +541,7 @@
         <div id="taxiFields" class="row">
           <div class="col-md-4">
             <label for="taxiMiles">On average, miles you ride per week:</label>
-            <input id="taxiMiles" class="form-control" type="text" placeholder="miles per week">
+            <input id="taxiMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
       </div>
@@ -662,22 +708,40 @@
       <div class="row spacing-container">
         <div id="resultsChart" class="col-md-8"></div>
         <div id="resultsIfEveryoneWasLikeYou" class="col-md-4">
+          <h5 id="ifEveryoneWasLikeYouHeader">If everyone was like you...</h5>
           <div class="card ifEveryoneWasLikeYouCard">
+            <img class="card-img-top" src="images/shower-with-water-droplets.svg">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <p class="card-text">Cutting your meat intake by ⅓ can reduce your overall water consumption by ⅓! An average family uses 400 gallons of water per day... That means over a 100 gallon reduction.</p>
+              <a href="http://www.onegreenplanet.org/animalsandnature/how-does-eating-meat-impact-your-water-footprint/" class="card-link">source</a>
             </div>
           </div>
           <div class="card ifEveryoneWasLikeYouCard">
+            <img class="card-img-top" src="images/lightning-button.svg">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <p class="card-text">Switching to public transportation can save households, on average, over $8,000 per year.</p>
+              <a href="http://www.apta.com/gap/policyresearch/Documents/facts_environment_09.pdf" class="card-link">source</a>
+            </div>
+          </div>
+          <!-- <div class="card ifEveryoneWasLikeYouCard">
+            <img class="card-img-top" src="images/throw-to-paper-bin.svg">
+            <div class="card-body">
+              <p class="card-text">Recycling just one aluminum can save enough energy for powering a TV for 3 hours.</p>
+              <a href="http://www.recycleacrossamerica.org/recycling-facts" class="card-link">source</a>
+            </div>
+          </div>
+          <div class="card ifEveryoneWasLikeYouCard">
+            <img class="card-img-top" src="images/recycling-symbol.svg">
+            <div class="card-body">
+              <p class="card-text">By recycling all pounds of paper you use each year, you could save, using metrics from the average American, 6 trees and 120 gallons of oil.</p>
+              <a href="https://www.conserve-energy-future.com/various-recycling-facts.php" class="card-link">source</a>
+            </div>
+          </div> -->
+          <div class="card ifEveryoneWasLikeYouCard">
+            <img class="card-img-top" src="images/sun.svg">
+            <div class="card-body">
+              <p class="card-text">Abstaining from a single summer grill session can save approximately 2.5 lbs of CO2 pollution.</p>
+              <a href="http://www.science20.com/science_mom/i_wanna_go_green_so_show_me_the_math" class="card-link">source</a>
             </div>
           </div>
         </div>
@@ -686,30 +750,27 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Section</th>
+              <th scope="col">t/CO2</th>
+              <th scope="col">$ (USD)</th>
+              <th scope="col"><span class="oi oi-info"></span></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <th scope="row">Home</th>
+              <td>1215</td>
+              <td>70.65</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <th scope="row">Transportation</th>
+              <td>2788</td>
+              <td>$150.33</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <th scope="row">Diet</th>
+              <td>498</td>
+              <td>$60.26</td>
             </tr>
           </tbody>
         </table>

@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-02-21 03:07:58
+* @Last Modified time: 2018-02-26 04:35:16
 */
 
 window.onload = function() {
@@ -133,28 +133,35 @@ window.onload = function() {
         }
     });
     // -> Public Transit
-    var publicTransitSelector = document.getElementById('publicTransitSelector');
-    publicTransitSelector.addEventListener('change', function() {
-        var selectedPublicTransit = [];
-        for (var i = 0; i < publicTransitSelector.length; i++) {
-            if (publicTransitSelector.options[i].selected) {
-                selectedPublicTransit.push(publicTransitSelector.options[i].value);
-            }
-        }
+    var publicTransitCheckbox1 = document.getElementById('publicTransitCheckbox1');
+    publicTransitCheckbox1.addEventListener('click', function() {
         var bus = document.getElementById('bus');
-        ifTrueDisplay(selectedPublicTransit.indexOf('bus') != -1, bus);
-        var coach = document.getElementById('coach');
-        ifTrueDisplay(selectedPublicTransit.indexOf('coach') != -1, coach);
+        ifTrueDisplay(publicTransitCheckbox1.checked, bus);
+    });
+    var publicTransitCheckbox2 = document.getElementById('publicTransitCheckbox2');
+    publicTransitCheckbox2.addEventListener('click', function() {
         var localTrain = document.getElementById('localTrain');
-        ifTrueDisplay(selectedPublicTransit.indexOf('localTrain') != -1, localTrain);
+        ifTrueDisplay(publicTransitCheckbox2.checked, localTrain);
+    });
+    var publicTransitCheckbox3 = document.getElementById('publicTransitCheckbox3');
+    publicTransitCheckbox3.addEventListener('click', function() {
         var longDistTrain = document.getElementById('longDistTrain');
-        ifTrueDisplay(selectedPublicTransit.indexOf('longDistTrain') != -1, longDistTrain);
+        ifTrueDisplay(publicTransitCheckbox3.checked, longDistTrain);
+    });
+    var publicTransitCheckbox4 = document.getElementById('publicTransitCheckbox4');
+    publicTransitCheckbox4.addEventListener('click', function() {
         var tram = document.getElementById('tram');
-        ifTrueDisplay(selectedPublicTransit.indexOf('tram') != -1, tram);
+        ifTrueDisplay(publicTransitCheckbox4.checked, tram);
+    });
+    var publicTransitCheckbox5 = document.getElementById('publicTransitCheckbox5');
+    publicTransitCheckbox5.addEventListener('click', function() {
         var subway = document.getElementById('subway');
-        ifTrueDisplay(selectedPublicTransit.indexOf('subway') != -1, subway);
-        var bus = document.getElementById('taxi');
-        ifTrueDisplay(selectedPublicTransit.indexOf('taxi') != -1, taxi);
+        ifTrueDisplay(publicTransitCheckbox5.checked, subway);
+    });
+    var publicTransitCheckbox6 = document.getElementById('publicTransitCheckbox6');
+    publicTransitCheckbox6.addEventListener('click', function() {
+        var taxi = document.getElementById('taxi');
+        ifTrueDisplay(publicTransitCheckbox6.checked, taxi);
     });
     // -> Flights
     var addFlight = document.getElementById('addFlight');
@@ -225,6 +232,10 @@ window.onload = function() {
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, mealsPerDay);
     });
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 function ifTrueDisplay(boolean, toDisplay) {
     if (boolean) {
