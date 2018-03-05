@@ -11,9 +11,12 @@
 */
 
 /* COLORS
+    - new navbar         #90B57F
+
     - navbar             #1C4559
     - background         #95A8B1
     - assessment tabs    #4A7C59
+    - new tabs           #2E6F5C
     - borders            #596157
     - tab text           #C8D5B9
 */
@@ -29,7 +32,13 @@ body {
 }
 
 nav {
-    background-color: #1C4559;
+    /*background-color: #90B57F;*/
+}
+
+.navbar-light .navbar-brand {
+	font-weight: bold;
+
+    /*background-color: #1C4559;*/
     height: 75px;
 }
 
@@ -73,6 +82,10 @@ nav {
     display: block;
 }
 
+.btn-primary {
+	background-color: #2E6F5C
+}
+
 /*  ===PAGES===  */
 #about {
     width: 800px;
@@ -80,6 +93,7 @@ nav {
 
 #assessment {
     display: none;
+    margin-top: 60px;
 }
 
 #login {
@@ -130,8 +144,8 @@ nav {
 
 .nav-tabs .nav-link {
     border: 1px solid #596157;
-    background: #4A7C59;
-    color: #C8D5B9;
+    background: #2E6F5C;
+    color: white;
 }
 
 .nav-tabs .nav-link.active {
