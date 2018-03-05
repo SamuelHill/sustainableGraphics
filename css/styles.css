@@ -11,11 +11,9 @@
 */
 
 /* COLORS
-    - new navbar         #90B57F
-
     - navbar             #1C4559
     - background         #95A8B1
-    - new tabs           #2E6F5C
+    - tabs               #7BAE7F
     - borders            #596157
     - tab text           #C8D5B9
 */
@@ -81,7 +79,8 @@ nav {
 }
 
 .btn-primary {
-	background-color: #2E6F5C
+	background-color: #7BAE7F;
+	border-color: #7BAE7F;
 }
 
 /*  ===PAGES===  */
@@ -142,7 +141,7 @@ nav {
 
 .nav-tabs .nav-link {
     border: 1px solid #596157;
-    background: #2E6F5C;
+    background: #7BAE7F;
     color: white;
 }
 
