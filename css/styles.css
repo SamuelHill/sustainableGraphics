@@ -11,13 +11,10 @@
 */
 
 /* COLORS
-<<<<<<< HEAD
-    - navbar             #498096
     - new navbar         #90B57F
-=======
+
     - navbar             #1C4559
     - background         #95A8B1
->>>>>>> 694c0c774bc5a3832960a0767b2f128397faa5ff
     - assessment tabs    #4A7C59
     - new tabs           #2E6F5C
     - borders            #596157
@@ -35,12 +32,13 @@ body {
 }
 
 nav {
-    background-color: #90B57F;
+    /*background-color: #90B57F;*/
 }
 
 .navbar-light .navbar-brand {
 	font-weight: bold;
-    background-color: #1C4559;
+
+    /*background-color: #1C4559;*/
     height: 75px;
 }
 
