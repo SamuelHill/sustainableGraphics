@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
   <a id="navbar-about-a" class="navbar-brand" href="#about">
-    <img src="images/tree-black-silhouette-shape.svg" width="30" height="30" class="d-inline-block align-top">
+    <img src="images/tree-black-silhouette-shape.svg" class="d-inline-block align-top">
     Sustainable Graphics
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,9 +38,9 @@
 <div id="about" class="center_of_page">
   <div id="image_container">
     <img src="images/pickup_vision.jpg">
-    <a class="image_link" href="http://www.hitachi.com/environment/">
+    <!-- <a class="image_link" href="http://www.hitachi.com/environment/">
       http://www.hitachi.com/environment/
-    </a>
+    </a> -->
   </div>
   <div id="about_name">
     Welcome to our Carbon Footprint Calculator!
@@ -788,8 +788,39 @@
     <!-- ===Goals Tab=== -->
     <div id="goals-assessment" class="tab-pane container">
       <div class="row spacing-container">
-        Goals
+        <div class="circle">
+          <img src="images/Simple_Eiffel_Tower.svg" class="d-inline-block align-top">
+          <p>Paris Climate Agreement Goal</p>
+        </div>
+        <div class="circle">
+          <img src="images/planet-earth.svg" class="d-inline-block align-top">
+          <p>Below national average</p>
+        </div>
+        <div class="circle">
+          <img src="images/bike.svg" class="d-inline-block align-top">
+          <p>Low transportation</p>
+        </div>
       </div>
+      <div id="goal-presets" class="spacing-container">
+        <label for="goalPresetsCheckbox">Select an option below to set your emission goals:</label>
+        <fieldset id="goalPresetsCheckbox" class="form-group">
+          <div class="form-check form-check-inline">
+            <input id="goalPresetsCheckbox1" class="form-check-input" type="checkbox" value="Paris">
+            <label for="goalPresetsCheckbox1" class="form-check-label">Paris</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="goalPresetsCheckbox2" class="form-check-input" type="checkbox" value="Average">
+            <label for="goalPresetsCheckbox2" class="form-check-label">National Average</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="goalPresetsCheckbox3" class="form-check-input" type="checkbox" value="Custom">
+            <label for="goalPresetsCheckbox3" class="form-check-label">Custom</label>
+          </div>
+        </fieldset>
+      </div>
+      <div id="paris-presets" class="spacing-container"></div>
+      <div id="average-presets" class="spacing-container"></div>
+      <div id="custom-goals" class="spacing-container"></div>
       <div class="spacing-container">
         <div class="assessmentBack">
           <button id="goalsResults" class="btn btn-primary" type="button">Back</button>

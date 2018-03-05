@@ -11,11 +11,11 @@
 */
 
 /* COLORS
-    - navbar             #498096
+    - navbar             #1C4559
+    - background         #95A8B1
     - assessment tabs    #4A7C59
     - borders            #596157
     - tab text           #C8D5B9
-    -                    #52414C
 */
 
 /* FONTS
@@ -25,10 +25,30 @@
 /*  ===GLOBAL STYLES===  */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #95A8B1;
 }
 
 nav {
-    background-color: #498096;
+    background-color: #1C4559;
+    height: 75px;
+}
+
+#navbar-about-a {
+    color: #C8D5B9;
+}
+
+#navbar-about-a > img {
+    width: 30px;
+    height: 30px;
+}
+
+#navbar-assessment-a {
+    display: none;
+    color: #C8D5B9;
+}
+
+#navbar-login-a {
+    color: #C8D5B9;
 }
 
 .spacing-container {
@@ -123,6 +143,8 @@ nav {
     border-left: 1px solid #596157;
     border-bottom: 1px solid #596157;
     border-right: 1px solid #596157;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
 }
 
 .assessmentContinue {
@@ -264,5 +286,40 @@ nav {
 #ifEveryoneWasLikeYouHeader {
     text-align: center;
     margin: 20px 0;
+}
+
+/* Goals Tab */
+
+.circle {
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background: #B1BFC6;
+}
+
+.circle>img {
+    margin-left: 35px;
+    width: 50px;
+    margin-right: 35px;
+    margin-top: 5px;
+}
+
+.circle>p {
+    text-align: center;
+    font-size: .7rem;
+}
+
+#paris-presets {
+    display: none;
+}
+
+#average-presets {
+    display: none;
+}
+
+#custom-goals {
+    display: none;
 }
 

@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-02-26 04:35:16
+* @Last Modified time: 2018-03-04 19:15:01
 */
 
 window.onload = function() {
@@ -230,6 +230,23 @@ window.onload = function() {
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, typeOfMeat);
         var noRestrictions = document.getElementById('mealsPerDay');
         ifTrueDisplay(selectedDiet.indexOf('noRestrictions') != -1, mealsPerDay);
+    });
+
+    // Goals Tab
+    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
+    goalPresetsCheckbox1.addEventListener('click', function() {
+        var bus = document.getElementById('bus');
+        ifTrueDisplay(goalPresetsCheckbox1.checked, bus);
+    });
+    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
+    goalPresetsCheckbox1.addEventListener('click', function() {
+        var localTrain = document.getElementById('localTrain');
+        ifTrueDisplay(goalPresetsCheckbox1.checked, localTrain);
+    });
+    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
+    goalPresetsCheckbox1.addEventListener('click', function() {
+        var longDistTrain = document.getElementById('longDistTrain');
+        ifTrueDisplay(goalPresetsCheckbox1.checked, longDistTrain);
     });
 }
 
