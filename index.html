@@ -787,40 +787,104 @@
 
     <!-- ===Goals Tab=== -->
     <div id="goals-assessment" class="tab-pane container">
+      <div class="row spacing-container"><h5>Badges:</h5></div>
       <div class="row spacing-container">
-        <div class="circle">
+        <div id="eiffelBadge" class="circle">
           <img src="images/Simple_Eiffel_Tower.svg" class="d-inline-block align-top">
           <p>Paris Climate Agreement Goal</p>
         </div>
-        <div class="circle">
+        <div id="nationalBadge" class="circle">
           <img src="images/planet-earth.svg" class="d-inline-block align-top">
-          <p>Below national average</p>
+          <p>Below national <br> average</p>
         </div>
-        <div class="circle">
+        <div id="transBadge" class="circle">
           <img src="images/bike.svg" class="d-inline-block align-top">
           <p>Low transportation</p>
         </div>
       </div>
       <div id="goal-presets" class="spacing-container">
-        <label for="goalPresetsCheckbox">Select an option below to set your emission goals:</label>
-        <fieldset id="goalPresetsCheckbox" class="form-group">
+        <label for="goalPresetsRadio">Select an option below to set your emission goals:</label>
+        <fieldset id="goalPresetsRadio" class="form-group">
           <div class="form-check form-check-inline">
-            <input id="goalPresetsCheckbox1" class="form-check-input" type="checkbox" value="Paris">
-            <label for="goalPresetsCheckbox1" class="form-check-label">Paris</label>
+            <input id="goalPresetsRadio1" class="form-check-input" type="radio" name="goalsRadio" value="Paris">
+            <label for="goalPresetsRadio1" class="form-check-label">Paris</label>
           </div>
           <div class="form-check form-check-inline">
-            <input id="goalPresetsCheckbox2" class="form-check-input" type="checkbox" value="Average">
-            <label for="goalPresetsCheckbox2" class="form-check-label">National Average</label>
+            <input id="goalPresetsRadio2" class="form-check-input" type="radio" name="goalsRadio" value="Average">
+            <label for="goalPresetsRadio2" class="form-check-label">National Average</label>
           </div>
           <div class="form-check form-check-inline">
-            <input id="goalPresetsCheckbox3" class="form-check-input" type="checkbox" value="Custom">
-            <label for="goalPresetsCheckbox3" class="form-check-label">Custom</label>
+            <input id="goalPresetsRadio3" class="form-check-input" type="radio" name="goalsRadio" value="Custom">
+            <label for="goalPresetsRadio3" class="form-check-label">Custom</label>
           </div>
         </fieldset>
       </div>
-      <div id="paris-presets" class="spacing-container"></div>
-      <div id="average-presets" class="spacing-container"></div>
-      <div id="custom-goals" class="spacing-container"></div>
+      <div id="paris-presets" class="spacing-container">
+      <h5>Goals:</h5>
+      <p>Home - 900 t/CO2</p>
+      <p>Transportation - 1200 t/CO2</p>
+      <p>Diet - 350 t/CO2</p>
+      </div>
+      <div id="average-presets" class="spacing-container">
+        <h5>Goals:</h5>
+        <p>Home - 1990 t/CO2</p>
+        <p>Transportation - 3836 t/CO2</p>
+        <p>Diet - 864 t/CO2</p>
+      </div>
+      <div id="custom-goals">
+        <h5>Goals:</h5>
+        <div id="homeGoal" class="spacing-container">
+          <label for="homeGoalFields">Home</label>
+          <div id="homeGoalFields" class="row">
+            <div class="col-md-4">
+              <label for="homeGoalReduction">Goal (reduction):</label>
+              <input id="homeGoalReduction" class="form-control" type="number" placeholder="Reduction amount">
+            </div>
+            <div class="col-md-4">
+              <label for="homeGoalReductionUnits">Units</label>
+              <select id="homeGoalReductionUnits" class="form-control">
+                <option id="homeGoalReductionUnitTonnes" value="CubicFeet">t/CO2</option>
+                <option id="homeGoalReductionUnitUSD" value="USD">USD ($)</option>
+                <option id="homeGoalReductionUnitPercent" value="kWh">Percentage of current</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="transGoal" class="spacing-container">
+          <label for="transGoalFields">Transportation</label>
+          <div id="transGoalFields" class="row">
+            <div class="col-md-4">
+              <label for="transGoalReduction">Goal (reduction):</label>
+              <input id="transGoalReduction" class="form-control" type="number" placeholder="Reduction amount">
+            </div>
+            <div class="col-md-4">
+              <label for="transGoalReductionUnits">Units</label>
+              <select id="transGoalReductionUnits" class="form-control">
+                <option id="transGoalReductionUnitTonnes" value="CubicFeet">t/CO2</option>
+                <option id="transGoalReductionUnitUSD" value="USD">USD ($)</option>
+                <option id="transGoalReductionUnitPercent" value="kWh">Percentage of current</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="dietGoal" class="spacing-container">
+          <label for="dietGoalFields">Diet</label>
+          <div id="dietGoalFields" class="row">
+            <div class="col-md-4">
+              <label for="dietGoalReduction">Goal (reduction):</label>
+              <input id="dietGoalReduction" class="form-control" type="number" placeholder="Reduction amount">
+            </div>
+            <div class="col-md-4">
+              <label for="dietGoalReductionUnits">Units</label>
+              <select id="dietGoalReductionUnits" class="form-control">
+                <option id="dietGoalReductionUnitTonnes" value="CubicFeet">t/CO2</option>
+                <option id="dietGoalReductionUnitUSD" value="USD">USD ($)</option>
+                <option id="dietGoalReductionUnitPercent" value="kWh">Percentage of current</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="spacing-container">
         <div class="assessmentBack">
           <button id="goalsResults" class="btn btn-primary" type="button">Back</button>
