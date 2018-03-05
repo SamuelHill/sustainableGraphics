@@ -15,7 +15,6 @@
 
     - navbar             #1C4559
     - background         #95A8B1
-    - assessment tabs    #4A7C59
     - new tabs           #2E6F5C
     - borders            #596157
     - tab text           #C8D5B9
@@ -36,11 +35,9 @@ nav {
     height: 75px;
 }
 
-.navbar-light .navbar-brand {
-	/*font-weight: bold;*/
 
-    /*background-color: #1C4559;*/
-    
+.navbar-brand {
+    font-weight: bold;
 }
 
 #navbar-about-a {
@@ -311,19 +308,44 @@ nav {
     border-radius: 50%;
     width: 120px;
     height: 120px;
+}
+
+.circle>p {
+    text-align: center;
+    font-size: .7rem;
+}
+
+#eiffelBadge {
     background: #B1BFC6;
 }
 
-.circle>img {
+#eiffelBadge>img {
     margin-left: 35px;
     width: 50px;
     margin-right: 35px;
     margin-top: 5px;
 }
 
-.circle>p {
-    text-align: center;
-    font-size: .7rem;
+#nationalBadge {
+    background: #7B9F86;
+}
+
+#nationalBadge>img {
+    margin-left: 25px;
+    width: 70px;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+
+#transBadge {
+    background: #7B9F86;
+}
+
+#transBadge>img {
+    margin-left: 25px;
+    width: 70px;
+    margin-right: 25px;
+    margin-top: 5px;
 }
 
 #paris-presets {

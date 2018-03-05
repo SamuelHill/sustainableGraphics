@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-03-04 19:15:01
+* @Last Modified time: 2018-03-04 20:23:37
 */
 
 window.onload = function() {
@@ -233,20 +233,30 @@ window.onload = function() {
     });
 
     // Goals Tab
-    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
-    goalPresetsCheckbox1.addEventListener('click', function() {
-        var bus = document.getElementById('bus');
-        ifTrueDisplay(goalPresetsCheckbox1.checked, bus);
+    var parispresets = document.getElementById('paris-presets');
+    var averagepresets = document.getElementById('average-presets');
+    var customgoals = document.getElementById('custom-goals');
+    var eiffelBadge = document.getElementById('eiffelBadge');
+    var goalPresetsRadio1 = document.getElementById('goalPresetsRadio1');
+    goalPresetsRadio1.addEventListener('click', function() {
+        ifTrueDisplay(goalPresetsRadio1.checked, parispresets);
+        ifTrueDisplay(false, averagepresets);
+        ifTrueDisplay(false, customgoals);
+        eiffelBadge.style.backgroundColor = '#7B9F86';
     });
-    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
-    goalPresetsCheckbox1.addEventListener('click', function() {
-        var localTrain = document.getElementById('localTrain');
-        ifTrueDisplay(goalPresetsCheckbox1.checked, localTrain);
+    var goalPresetsRadio2 = document.getElementById('goalPresetsRadio2');
+    goalPresetsRadio2.addEventListener('click', function() {
+        ifTrueDisplay(false, parispresets);
+        ifTrueDisplay(goalPresetsRadio2.checked, averagepresets);
+        ifTrueDisplay(false, customgoals);
+        eiffelBadge.style.backgroundColor = '#B1BFC6';
     });
-    var goalPresetsCheckbox1 = document.getElementById('goalPresetsCheckbox1');
-    goalPresetsCheckbox1.addEventListener('click', function() {
-        var longDistTrain = document.getElementById('longDistTrain');
-        ifTrueDisplay(goalPresetsCheckbox1.checked, longDistTrain);
+    var goalPresetsRadio3 = document.getElementById('goalPresetsRadio3');
+    goalPresetsRadio3.addEventListener('click', function() {
+        ifTrueDisplay(false, parispresets);
+        ifTrueDisplay(false, averagepresets);
+        ifTrueDisplay(goalPresetsRadio3.checked, customgoals);
+        eiffelBadge.style.backgroundColor = '#B1BFC6';
     });
 }
 
