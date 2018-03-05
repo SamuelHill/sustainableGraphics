@@ -32,14 +32,15 @@ body {
 }
 
 nav {
-    /*background-color: #90B57F;*/
+    background-color: #1C4559;
+    height: 75px;
 }
 
 .navbar-light .navbar-brand {
-	font-weight: bold;
+	/*font-weight: bold;*/
 
     /*background-color: #1C4559;*/
-    height: 75px;
+    
 }
 
 #navbar-about-a {
