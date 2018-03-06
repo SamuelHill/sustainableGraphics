@@ -3,15 +3,8 @@
     - Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 */
 
-/* CSS DIRECTORY
-    1. =GLOBAL
-    2. =PAGES
-    3. =ABOUT
-    4. =ASSESSMENT
-*/
-
 /* COLORS
-    - navbar             #1C4559
+    - navbar             #305568
     - background         #95A8B1
     - tabs               #7BAE7F
     - borders            #596157
@@ -29,13 +22,15 @@ body {
 }
 
 nav {
-    background-color: #1C4559;
+    background-color: #305568;
     height: 75px;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 
-.navbar-brand {
-    font-weight: bold;
+.navbar-brand > img {
+    margin-right: 10px;
 }
 
 #navbar-about-a {
@@ -73,14 +68,31 @@ nav {
 }
 
 .center_of_page {
-    width: 70%;
-    margin: 20px auto;
+    width: 80%;
+    margin: 60px auto;
     display: block;
 }
 
 .btn-primary {
-	background-color: #7BAE7F;
-	border-color: #7BAE7F;
+    color: #C8D5B9;
+    background-color: #7BAE7F;
+    border-color: #7BAE7F;
+}
+
+.btn-primary:hover {
+    background-color: #4E724E;
+    border-color: #4E724E;
+    box-shadow: none;
+}
+
+.btn-primary:active, .btn-primary:focus {
+    background-color: #4E724E !important;
+    border-color: #4E724E !important;
+    box-shadow: 0 0 0 0.2rem #7BAE7F !important;
+}
+
+h5 {
+    font-weight: bold;
 }
 
 /*  ===PAGES===  */
@@ -90,7 +102,6 @@ nav {
 
 #assessment {
     display: none;
-    margin-top: 60px;
 }
 
 #login {
@@ -116,7 +127,7 @@ nav {
 
 #about_name{
     padding-top: 10px;
-    font-size: x-large;
+    font-size: 1.75rem;
     font-weight: bolder;
     font-style: italic;
     color: #52414C;
@@ -127,14 +138,9 @@ nav {
     padding-top: 10px;
 }
 
-.aboutLoginButton {
-    margin-right: 50px;
-    float: right;
-}
-
 .aboutAssessmentButton {
-    margin-left: 50px;
-    float: left;
+    width: 127px;
+    margin: 0 auto;
 }
 
 /*  ===ASSESSMENT===  */
@@ -142,12 +148,20 @@ nav {
 .nav-tabs .nav-link {
     border: 1px solid #596157;
     background: #7BAE7F;
-    color: white;
+    color: #C8D5B9;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 1px solid #596157;
+    background-color: #4E724E;
 }
 
 .nav-tabs .nav-link.active {
-    /*border-color: #596157;*/
     border-color: #596157 #596157 #FFF;
+}
+
+.nav-tabs .nav-link.active:hover {
+    background-color: #FFF;
 }
 
 .tab-content {
@@ -158,12 +172,28 @@ nav {
     background-color: white;
 }
 
+.tab-pane {
+    padding: 0 75px;
+    min-height: 700px;
+    position: relative;
+}
+
+.assessmentButtonContainer {
+    padding-top: 78px;
+}
+
 .assessmentContinue {
-    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px 60px;
 }
 
 .assessmentBack {
-    float: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 60px;
 }
 
 /* Home Tab */
@@ -172,78 +202,166 @@ nav {
     margin: 0;
 }
 
+label[for=utilitiesCheckbox] {
+    font-weight: bold;
+}
+
 #heatingSourceUtilities {
     display: none;
+}
+
+label[for=heatingSourceSelect] {
+    font-weight: bold;
 }
 
 #naturalGasUtilities {
     display: none;
 }
 
+label[for=naturalGasFields] {
+    font-weight: bold;
+}
+
 #electricityUtilities {
     display: none;
+}
+
+label[for=electricityFields] {
+    font-weight: bold;
 }
 
 #fuelOilUtilities {
     display: none;
 }
 
+label[for=fuelOilFields] {
+    font-weight: bold;
+}
+
 #propaneUtilities {
     display: none;
+}
+
+label[for=propaneFields] {
+    font-weight: bold;
 }
 
 #coalUtilities {
     display: none;
 }
 
+label[for=coalFields] {
+    font-weight: bold;
+}
+
 #lpgUtilities {
     display: none;
 }
 
+label[for=lpgFields] {
+    font-weight: bold;
+}
+
 /* Transportation Tab */
+
+label[for=numVehiclesSelector] {
+    font-weight: bold;
+}
 
 #vehicle1 {
     display: none;
+}
+
+label[for=vehicle1fields] {
+    font-weight: bold;
 }
 
 #vehicle2 {
     display: none;
 }
 
+label[for=vehicle2fields] {
+    font-weight: bold;
+}
+
 #vehicle3 {
     display: none;
+}
+
+label[for=vehicle3fields] {
+    font-weight: bold;
 }
 
 #vehicle4 {
     display: none;
 }
 
+label[for=vehicle4fields] {
+    font-weight: bold;
+}
+
 #vehicle5 {
     display: none;
+}
+
+label[for=vehicle5fields] {
+    font-weight: bold;
+}
+
+label[for=publicTransitCheckbox] {
+    font-weight: bold;
 }
 
 #bus {
     display: none;
 }
 
+label[for=busFields] {
+    font-weight: bold;
+}
+
 #localTrain {
     display: none;
+}
+
+label[for=localTrainFields] {
+    font-weight: bold;
 }
 
 #longDistTrain {
     display: none;
 }
 
+label[for=longDistTrainFields] {
+    font-weight: bold;
+}
+
 #tram {
     display: none;
+}
+
+label[for=tramFields] {
+    font-weight: bold;
 }
 
 #subway {
     display: none;
 }
 
+label[for=subwayFields] {
+    font-weight: bold;
+}
+
 #taxi {
     display: none;
+}
+
+label[for=taxiFields] {
+    font-weight: bold;
+}
+
+label[for=flightFields] {
+    font-weight: bold;
 }
 
 .flightCardSpacing {
@@ -268,19 +386,39 @@ nav {
 
 /* Diet Tab */
 
+label[for=locallySourced] {
+    font-weight: bold;
+    overflow-x: visible;
+}
+
+label[for=dietaryStyle] {
+    font-weight: bold;
+    overflow-x: visible;
+}
+
 #mealsPerDay {
     display: none;
+}
+
+label[for=mealsPerDayInput] {
+    font-weight: bold;
+    overflow-x: visible;
 }
 
 #typeOfMeat {
     display: none;
 }
 
+label[for=typeOfMeatInput] {
+    font-weight: bold;
+    overflow-x: visible;
+}
+
 /* Results Tab */
 
 #resultsChart{
     min-width: 310px;
-    height: 800px;
+    height: 900px;
     margin: 10px auto;
 }
 
@@ -302,16 +440,17 @@ nav {
 /* Goals Tab */
 
 .circle {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 0 25px;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #596157;
 }
 
 .circle>p {
     text-align: center;
-    font-size: .7rem;
+    font-size: .8rem;
+    font-weight: bold;
 }
 
 #eiffelBadge {
@@ -319,9 +458,9 @@ nav {
 }
 
 #eiffelBadge>img {
-    margin-left: 35px;
-    width: 50px;
-    margin-right: 35px;
+    margin-left: 45px;
+    width: 60px;
+    margin-right: 45px;
     margin-top: 5px;
 }
 
@@ -330,9 +469,13 @@ nav {
 }
 
 #nationalBadge>img {
-    margin-left: 25px;
-    width: 70px;
-    margin-right: 25px;
+    margin-left: 35px;
+    width: 80px;
+    margin-right: 35px;
+    margin-top: 5px;
+}
+
+#nationalBadge>p {
     margin-top: 5px;
 }
 
@@ -341,9 +484,9 @@ nav {
 }
 
 #transBadge>img {
-    margin-left: 25px;
-    width: 70px;
-    margin-right: 25px;
+    margin-left: 35px;
+    width: 80px;
+    margin-right: 35px;
     margin-top: 5px;
 }
 
@@ -357,5 +500,20 @@ nav {
 
 #custom-goals {
     display: none;
+}
+
+label[for=homeGoalFields] {
+    font-weight: bold;
+    overflow-x: visible;
+}
+
+label[for=transGoalFields] {
+    font-weight: bold;
+    overflow-x: visible;
+}
+
+label[for=dietGoalFields] {
+    font-weight: bold;
+    overflow-x: visible;
 }
 

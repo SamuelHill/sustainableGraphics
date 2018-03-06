@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-03-04 20:23:37
+* @Last Modified time: 2018-03-06 03:46:51
 */
 
 window.onload = function() {
@@ -39,10 +39,6 @@ window.onload = function() {
     var takeAssessmentButton = document.getElementById('takeAssessmentButton');
     takeAssessmentButton.addEventListener('click', function() {
         navbarAssessment.click();
-    });
-    var loginButton = document.getElementById('loginButton');
-    loginButton.addEventListener('click', function() {
-        navbarLogin.click();
     });
 
     // Assessment navigation
@@ -277,7 +273,10 @@ Highcharts.chart('resultsChart', {
         type: 'column'
     },
     title: {
-        text: 'Your impact vs national average and paris climate agreement goal'
+        text: 'Your impact vs national average and paris climate agreement goal',
+        style: {
+            fontSize: '20px'
+        }
     },
     xAxis: {
         categories: [
@@ -285,16 +284,31 @@ Highcharts.chart('resultsChart', {
             'Transportation',
             'Diet'
         ],
+        labels: {
+            style: {
+                fontSize:'16px'
+            }
+        },
         crosshair: true
     },
     yAxis: {
         min: 0,
+        labels: {
+            style: {
+                fontSize:'16px'
+            }
+        },
         title: {
             text: 'Tons of CO2 (t/CO2)'
         }
     },
+    legend: {
+        itemStyle: {
+            fontSize: '16px'
+        }
+    },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        headerFormat: '<span style="font-size:16px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
             '<td style="padding:0"><b>{point.y} t/CO2</b></td></tr>',
         footerFormat: '</table>',
@@ -309,14 +323,17 @@ Highcharts.chart('resultsChart', {
     },
     series: [{
         name: 'US Avg.',
-        data: [1990, 3836, 864]
+        data: [1990, 3836, 864],
+        color: '#305568'
 
     }, {
         name: 'You',
-        data: [1215, 2788, 498]
+        data: [1215, 2788, 498],
+        color: '#596157'
     }, {
-        name: 'Paris Climate Agreement goal',
-        data: [900, 1200, 350]
+        name: 'Paris Climate Agreement',
+        data: [900, 1200, 350],
+        color: '#7BAE7F'
 
     }]
 });

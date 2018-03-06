@@ -38,22 +38,16 @@
 <div id="about" class="center_of_page">
   <div id="image_container">
     <img src="images/pickup_vision.jpg">
-    <!-- <a class="image_link" href="http://www.hitachi.com/environment/">
-      http://www.hitachi.com/environment/
-    </a> -->
   </div>
   <div id="about_name">
     Welcome to our Carbon Footprint Calculator!
   </div>
   <div id="about_description">
-    &emsp;&emsp;Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" link in the top right or the button in the bottom left. To log in to your account or to sign up for a new account select the link in the top right or the button in the bottom right.
+    &emsp;&emsp;Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" button in the bottom left. To log in to your account or to sign up for a new account select the link in the top right.
   </div>
   <div class="spacing-container">
     <div class="aboutAssessmentButton">
       <button id="takeAssessmentButton" class="btn btn-primary" type="button">Take Assessment</button>
-    </div>
-    <div class="aboutLoginButton">
-      <button id="loginButton" class="btn" type="button">Login</button>
     </div>
   </div>
   <div class="clearFloats spacing-container"></div>
@@ -142,13 +136,13 @@
   <div class="tab-content">
 
     <!-- ===Home Tab=== -->
-    <div id="home-assessment" class="tab-pane active container">
+    <div id="home-assessment" class="tab-pane active">
 
       <!-- ===Utilities=== -->
       <div id="utilities" class="spacing-container">
         <label for="utilitiesCheckbox">
           Utilities &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+          <span class="oi oi-info" title="Please select the utilities that you want to input data for. These should be utilities that you pay for (or split with roommates)." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <fieldset id="utilitiesCheckbox" class="form-group">
           <div class="form-check form-check-inline">
@@ -188,7 +182,7 @@
           <div class="col-md-4">
             <label for="heatingSourceSelect">
               Heating Source &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="Please select the type of heating source that your home uses." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="heatingSourceSelect" class="form-control">
               <option value="none" selected disabled>----</option>
@@ -210,14 +204,14 @@
           <div class="col-md-4">
             <label for="naturalGasAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="naturalGasAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="naturalGasUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="naturalGasUnits" class="form-control">
               <option id="naturalGasUSD" value="USD">USD ($)</option>
@@ -236,14 +230,14 @@
           <div class="col-md-4">
             <label for="electricityAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="electricityAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="electricityUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="electricityUnits" class="form-control">
               <option id="electricityUSD" value="USD">USD ($)</option>
@@ -260,12 +254,15 @@
           <div class="col-md-4">
             <label for="fuelOilAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="fuelOilAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
-            <label for="fuelOilUnits">Units</label>
+            <label for="fuelOilUnits">
+              Units &nbsp;
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+            </label>
             <select id="fuelOilUnits" class="form-control">
               <option id="fuelOilUSD" value="USD">USD ($)</option>
               <option id="fuelOilkWh" value="kWh">kWh</option>
@@ -284,14 +281,14 @@
           <div class="col-md-4">
             <label for="propaneAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="propaneAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="propaneUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="propaneUnits" class="form-control">
               <option id="propaneUSD" value="USD">USD ($)</option>
@@ -310,14 +307,14 @@
           <div class="col-md-4">
             <label for="coalAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="coalAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="coalUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="coalUnits" class="form-control">
               <option id="coalUSD" value="USD">USD ($)</option>
@@ -339,14 +336,14 @@
           <div class="col-md-4">
             <label for="lpgAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="lpgAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="lpgUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></span>
+              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="lpgUnits" class="form-control">
               <option id="lpgUSD" value="USD">USD ($)</option>
@@ -358,21 +355,25 @@
           </div>
         </div>
       </div>
-      <div class="spacing-container">
+      <div class="spacing-container assessmentButtonContainer">
+        <div class="assessmentBack">
+        </div>
         <div class="assessmentContinue">
           <button id="continueHome" class="btn btn-primary" type="button">Continue</button>
         </div>
       </div>
-      <div class="clearFloats spacing-container"></div>
     </div>
 
     <!-- ===Transportation Tab=== -->
-    <div id="trans-assessment" class="tab-pane container">
+    <div id="trans-assessment" class="tab-pane">
 
       <!-- ===Cars=== -->
       <div id="numVehicles" class="row spacing-container">
         <div class="col-md-4">
-          <label for="numVehiclesSelector">How many vehicles do you have?</label>
+          <label for="numVehiclesSelector">
+            How many vehicles do you have? &nbsp;
+            <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          </label>
           <select id="numVehiclesSelector" class="form-control">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -463,7 +464,10 @@
 
       <!-- ===Public Transit=== -->
       <div id="publicTransit" class="spacing-container">
-        <label for="publicTransitCheckbox">What forms of public transit do you use?</label>
+        <label for="publicTransitCheckbox">
+          What forms of public transit do you use? &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
         <fieldset id="publicTransitCheckbox" class="form-group">
           <div class="form-check form-check-inline">
             <input id="publicTransitCheckbox1" class="form-check-input" type="checkbox" value="bus">
@@ -550,7 +554,10 @@
 
       <!-- ===Flights=== -->
       <div id="flights" class="spacing-container">
-        <label for="flightFields">Flights</label>
+        <label for="flightFields">
+          Flights &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
         <fieldset id="flightFields" class="form-group">
           <div id="flightTypeRadio" class="row">
             <div class="col-md-4">
@@ -645,14 +652,14 @@
             </div>
           </div>
         </fieldset>
-        <button id="addFlight" class="btn" type="button">Add Flight</button>
+        <button id="addFlight" class="btn btn-primary" type="button">Add Flight</button>
       </div>
       <div id="flightsTaken">
         <!--  -->
       </div>
-      <div class="spacing-container">
+      <div class="spacing-container assessmentButtonContainer">
         <div class="assessmentBack">
-          <button id="backTrans" class="btn btn-primary" type="button">Back</button>
+          <button id="backTrans" class="btn" type="button">Back</button>
         </div>
         <div class="assessmentContinue">
           <button id="continueTrans" class="btn btn-primary" type="button">Continue</button>
@@ -662,39 +669,59 @@
     </div>
 
     <!-- ===Diet Tab=== -->
-    <div id="diet-assessment" class="tab-pane container">
-      <div id="dietLocal" class="row spacing-container">
-        <div class="col-md-4">
-          <label for="locallySourced"> What percentage of your food is locally sourced? </label>
-          <input id="locallySourced" class="form-control" type="text" placeholder="Enter a Number">
+    <div id="diet-assessment" class="tab-pane">
+      <div id="dietLocal">
+        <label for="locallySourced" class="spacing-container">
+          What percentage of your food is locally sourced? &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
+        <div class="row">
+          <div class="col-md-4">
+            <input id="locallySourced" class="form-control" type="text" placeholder="Enter a Number">
+          </div>
         </div>
       </div>
-      <div id="dietRestrictions" class="row spacing-container">
-        <div class="col-md-4">
-          <label for="dietaryStyle"> What is your dietary style? </label>
-          <select id="dietSelection" class="form-control">
-            <option id="noSelection" value="noSelection" selected disabled>----</option>
-            <option id="noRestrictions" value="noRestrictions">No Restrictions (omnivore)</option>
-            <option id="vegetarian" value="vegetarian">Vegetarian</option>
-            <option id="vegan" value="vegan">Vegan</option>
-          </select>
+      <div id="dietRestrictions">
+        <label for="dietaryStyle" class="spacing-container">
+          What is your dietary style? &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
+        <div class="row">
+          <div class="col-md-4">
+            <select id="dietSelection" class="form-control">
+              <option id="noSelection" value="noSelection" selected disabled>----</option>
+              <option id="noRestrictions" value="noRestrictions">No Restrictions (omnivore)</option>
+              <option id="vegetarian" value="vegetarian">Vegetarian</option>
+              <option id="vegan" value="vegan">Vegan</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div id="mealsPerDay" class="row spacing-container">
-        <div class="col-md-4">
-          <label for="mealsPerDay"> How many of your meals each day include meat? </label>
-          <input id="mealsPerDayInput" class="form-control" type="text" placeholder="Enter a Number">
+      <div id="mealsPerDay">
+        <label for="mealsPerDayInput" class="spacing-container">
+          How many of your meals each day include meat? &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
+        <div class="row">
+          <div class="col-md-4">
+            <input id="mealsPerDayInput" class="form-control" type="text" placeholder="Enter a Number">
+          </div>
         </div>
       </div>
-      <div id="typeOfMeat" class="row spacing-container">
-        <div class="col-md-4">
-          <label for="typeOfMeat"> Of the meat you consume, what percentage is beef, lamb, or goat? </label>
-          <input id="typeOfMeatInput" class="form-control" type="text" placeholder="Enter a Number">
+      <div id="typeOfMeat">
+        <label for="typeOfMeatInput" class="spacing-container">
+          Of the meat you consume, what percentage is beef, lamb, or goat? &nbsp;
+          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+        </label>
+        <div class="row">
+          <div class="col-md-4">
+            <input id="typeOfMeatInput" class="form-control" type="text" placeholder="Enter a Number">
+          </div>
         </div>
       </div>
-      <div class="spacing-container">
+      <div class="spacing-container assessmentButtonContainer">
         <div class="assessmentBack">
-          <button id="backDiet" class="btn btn-primary" type="button">Back</button>
+          <button id="backDiet" class="btn" type="button">Back</button>
         </div>
         <div class="assessmentContinue">
           <button id="continueDiet" class="btn btn-primary" type="button">Continue</button>
@@ -704,7 +731,7 @@
     </div>
 
     <!-- ===Results Tab=== -->
-    <div id="results-assessment" class="tab-pane container">
+    <div id="results-assessment" class="tab-pane">
       <div class="row spacing-container">
         <div id="resultsChart" class="col-md-8"></div>
         <div id="resultsIfEveryoneWasLikeYou" class="col-md-4">
@@ -723,20 +750,6 @@
               <a href="http://www.apta.com/gap/policyresearch/Documents/facts_environment_09.pdf" class="card-link">source</a>
             </div>
           </div>
-          <!-- <div class="card ifEveryoneWasLikeYouCard">
-            <img class="card-img-top" src="images/throw-to-paper-bin.svg">
-            <div class="card-body">
-              <p class="card-text">Recycling just one aluminum can save enough energy for powering a TV for 3 hours.</p>
-              <a href="http://www.recycleacrossamerica.org/recycling-facts" class="card-link">source</a>
-            </div>
-          </div>
-          <div class="card ifEveryoneWasLikeYouCard">
-            <img class="card-img-top" src="images/recycling-symbol.svg">
-            <div class="card-body">
-              <p class="card-text">By recycling all pounds of paper you use each year, you could save, using metrics from the average American, 6 trees and 120 gallons of oil.</p>
-              <a href="https://www.conserve-energy-future.com/various-recycling-facts.php" class="card-link">source</a>
-            </div>
-          </div> -->
           <div class="card ifEveryoneWasLikeYouCard">
             <img class="card-img-top" src="images/sun.svg">
             <div class="card-body">
@@ -774,9 +787,9 @@
           </tbody>
         </table>
       </div>
-      <div class="spacing-container">
+      <div class="spacing-container assessmentButtonContainer">
         <div class="assessmentBack">
-          <button id="backResults" class="btn btn-primary" type="button">Back</button>
+          <button id="backResults" class="btn" type="button">Back</button>
         </div>
         <div class="assessmentContinue">
           <button id="continueResults" class="btn btn-primary" type="button">Continue</button>
@@ -786,22 +799,27 @@
     </div>
 
     <!-- ===Goals Tab=== -->
-    <div id="goals-assessment" class="tab-pane container">
-      <div class="row spacing-container"><h5>Badges:</h5></div>
-      <div class="row spacing-container">
-        <div id="eiffelBadge" class="circle">
-          <img src="images/Simple_Eiffel_Tower.svg" class="d-inline-block align-top">
-          <p>Paris Climate Agreement Goal</p>
-        </div>
-        <div id="nationalBadge" class="circle">
-          <img src="images/planet-earth.svg" class="d-inline-block align-top">
-          <p>Below national <br> average</p>
-        </div>
-        <div id="transBadge" class="circle">
-          <img src="images/bike.svg" class="d-inline-block align-top">
-          <p>Low transportation</p>
+    <div id="goals-assessment" class="tab-pane">
+      <div class="spacing-container">
+          <h5>Badges:</h5>
+      </div>
+      <div class="spacing-container">
+        <div class="row">
+          <div id="eiffelBadge" class="circle">
+            <img src="images/Simple_Eiffel_Tower.svg" class="d-inline-block align-top">
+            <p>Paris Climate <br> Agreement <br> Goal</p>
+          </div>
+          <div id="nationalBadge" class="circle">
+            <img src="images/planet-earth.svg" class="d-inline-block align-top">
+            <p>Below national <br> average</p>
+          </div>
+          <div id="transBadge" class="circle">
+            <img src="images/bike.svg" class="d-inline-block align-top">
+            <p>Low <br> transportation</p>
+          </div>
         </div>
       </div>
+      <div class="spacing-container"></div>
       <div id="goal-presets" class="spacing-container">
         <label for="goalPresetsRadio">Select an option below to set your emission goals:</label>
         <fieldset id="goalPresetsRadio" class="form-group">
@@ -820,18 +838,22 @@
         </fieldset>
       </div>
       <div id="paris-presets" class="spacing-container">
-      <h5>Goals:</h5>
-      <p>Home - 900 t/CO2</p>
-      <p>Transportation - 1200 t/CO2</p>
-      <p>Diet - 350 t/CO2</p>
+        <h5>Goals:</h5>
+        <div class="spacing-container">
+          <p>Home - 900 t/CO2</p>
+          <p>Transportation - 1200 t/CO2</p>
+          <p>Diet - 350 t/CO2</p>
+        </div>
       </div>
       <div id="average-presets" class="spacing-container">
         <h5>Goals:</h5>
-        <p>Home - 1990 t/CO2</p>
-        <p>Transportation - 3836 t/CO2</p>
-        <p>Diet - 864 t/CO2</p>
+        <div class="spacing-container">
+          <p>Home - 1990 t/CO2</p>
+          <p>Transportation - 3836 t/CO2</p>
+          <p>Diet - 864 t/CO2</p>
+        </div>
       </div>
-      <div id="custom-goals">
+      <div id="custom-goals" class="spacing-container">
         <h5>Goals:</h5>
         <div id="homeGoal" class="spacing-container">
           <label for="homeGoalFields">Home</label>
@@ -885,9 +907,9 @@
           </div>
         </div>
       </div>
-      <div class="spacing-container">
+      <div class="spacing-container assessmentButtonContainer">
         <div class="assessmentBack">
-          <button id="goalsResults" class="btn btn-primary" type="button">Back</button>
+          <button id="goalsResults" class="btn" type="button">Back</button>
         </div>
       </div>
       <div class="clearFloats spacing-container"></div>
