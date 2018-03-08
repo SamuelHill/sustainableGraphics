@@ -74,7 +74,7 @@ nav {
 }
 
 .btn-primary {
-    color: #C8D5B9;
+    color: white;
     background-color: #7BAE7F;
     border-color: #7BAE7F;
 }
@@ -148,7 +148,7 @@ h5 {
 .nav-tabs .nav-link {
     border: 1px solid #596157;
     background: #7BAE7F;
-    color: #C8D5B9;
+    color: white;
 }
 
 .nav-tabs .nav-link:hover {
