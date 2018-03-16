@@ -2,7 +2,7 @@
 * @Authors: Nisha Bhuva, Emily Blackman, Samuel Hill
 * @Date: 2018-02-14 01:24:18
 * @Last Modified by:   SAMHILLPC\Sam Hill
-* @Last Modified time: 2018-03-06 03:46:51
+* @Last Modified time: 2018-03-16 00:48:26
 */
 
 window.onload = function() {
@@ -13,7 +13,9 @@ window.onload = function() {
     var assessmentNavItem = document.getElementById('navbar-assessment-li');
     // Navbar controls
     var navbarAbout = document.getElementById('navbar-about-a');
+    var jumbo = document.getElementById('jumbo');
     navbarAbout.addEventListener('click', function(){
+        jumbo.style.display = 'block';
         aboutSection.style.display = 'block';
         assessmentSection.style.display = 'none';
         assessmentNavItem.classList.remove('active');
@@ -21,6 +23,7 @@ window.onload = function() {
     var navbarAssessment = document.getElementById('navbar-assessment-a');
     navbarAssessment.addEventListener('click', function(){
         aboutSection.style.display = 'none';
+        jumbo.style.display = 'none';
         assessmentSection.style.display = 'block';
         assessmentNavItem.classList.add('active');
     });
@@ -70,9 +73,16 @@ window.onload = function() {
     continueResults.addEventListener('click', function() {
         document.getElementById('goalsTab').click();
     });
-    var goalsResults = document.getElementById('goalsResults');
-    goalsResults.addEventListener('click', function() {
+    var backGoals = document.getElementById('backGoals');
+    backGoals.addEventListener('click', function() {
         document.getElementById('resultsTab').click();
+    });
+    var doneAssessment = document.getElementById('doneAssessment');
+    var homeTab = document.getElementById('homeTab');
+    doneAssessment.addEventListener('click', function() {
+        homeTab.click();
+        navbarAbout.click();
+        $('#done_modal').modal('show');
     });
 
     // Home Tab
@@ -229,6 +239,10 @@ window.onload = function() {
     });
 
     // Goals Tab
+    var goalsTab = document.getElementById('goalsTab');
+    goalsTab.addEventListener('click', function() {
+        $('#goals_modal').modal('show');
+    });
     var parispresets = document.getElementById('paris-presets');
     var averagepresets = document.getElementById('average-presets');
     var customgoals = document.getElementById('custom-goals');
@@ -239,6 +253,7 @@ window.onload = function() {
         ifTrueDisplay(false, averagepresets);
         ifTrueDisplay(false, customgoals);
         eiffelBadge.style.backgroundColor = '#7B9F86';
+        $('#paris_modal').modal('show');
     });
     var goalPresetsRadio2 = document.getElementById('goalPresetsRadio2');
     goalPresetsRadio2.addEventListener('click', function() {

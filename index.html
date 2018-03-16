@@ -35,15 +35,13 @@
 </nav>
 
 <!-- ===ABOUT=== -->
+<div id="jumbo" class="jumbotron jumbotron-fluid"></div>
 <div id="about" class="center_of_page">
-  <div id="image_container">
-    <img src="images/pickup_vision.jpg">
-  </div>
   <div id="about_name">
     Welcome to our Carbon Footprint Calculator!
   </div>
   <div id="about_description">
-    &emsp;&emsp;Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" button in the bottom left. To log in to your account or to sign up for a new account select the link in the top right.
+    &emsp;&emsp;Did you know that the Earth uses resources at a faster rate than we can replenish them? Here, we have provided an intuitive system for calculating your carbon footprint. Track your results over time, set goals, or identify areas of improvement. To get started select the "Take Assessment" button below. To log in to your account or to sign up for a new account select the link in the top right.
   </div>
   <div class="spacing-container">
     <div class="aboutAssessmentButton">
@@ -51,6 +49,27 @@
     </div>
   </div>
   <div class="clearFloats spacing-container"></div>
+</div>
+
+<div id="done_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Done</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Progress saved!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="okayButton" class="btn btn-primary" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ===LOGIN=== -->
@@ -74,7 +93,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button id="loginSubmit" type="button" class="btn btn-primary">Login</button>
+        <button id="loginSubmit" type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
         <button id="signupButton" type="button" class="btn btn-secondary">Sign up</button>
       </div>
     </div>
@@ -104,7 +123,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button id="signupSubmit" type="button" class="btn btn-primary">Sign up</button>
+        <button id="signupSubmit" type="button" class="btn btn-primary" data-dismiss="modal">Sign up</button>
       </div>
     </div>
   </div>
@@ -204,14 +223,14 @@
           <div class="col-md-4">
             <label for="naturalGasAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="naturalGasAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="naturalGasUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="naturalGasUnits" class="form-control">
               <option id="naturalGasUSD" value="USD">USD ($)</option>
@@ -230,14 +249,14 @@
           <div class="col-md-4">
             <label for="electricityAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility. " aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="electricityAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="electricityUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="electricityUnits" class="form-control">
               <option id="electricityUSD" value="USD">USD ($)</option>
@@ -254,14 +273,14 @@
           <div class="col-md-4">
             <label for="fuelOilAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility. " aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="fuelOilAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="fuelOilUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="fuelOilUnits" class="form-control">
               <option id="fuelOilUSD" value="USD">USD ($)</option>
@@ -281,14 +300,14 @@
           <div class="col-md-4">
             <label for="propaneAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility. " aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="propaneAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="propaneUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="propaneUnits" class="form-control">
               <option id="propaneUSD" value="USD">USD ($)</option>
@@ -307,14 +326,14 @@
           <div class="col-md-4">
             <label for="coalAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility. " aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="coalAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="coalUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="coalUnits" class="form-control">
               <option id="coalUSD" value="USD">USD ($)</option>
@@ -336,14 +355,14 @@
           <div class="col-md-4">
             <label for="lpgAmount">
               Amount &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Please type the amount per month that corresponds to the selected unit. For example: for the unit USD, enter the amount you pay per month for this utility. " aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <input id="lpgAmount" class="form-control" type="number" placeholder="Amount">
           </div>
           <div class="col-md-4">
             <label for="lpgUnits">
               Units &nbsp;
-              <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+              <span class="oi oi-info" title="Select the unit you pay for this utility in. The default is USD for a standard conversion based on where you live, but if you know a more specific measure enter that." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
             </label>
             <select id="lpgUnits" class="form-control">
               <option id="lpgUSD" value="USD">USD ($)</option>
@@ -372,7 +391,7 @@
         <div class="col-md-4">
           <label for="numVehiclesSelector">
             How many vehicles do you have? &nbsp;
-            <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+            <span class="oi oi-info" title="Vehicles are defined as cars that you or your household own or rent on a regular basis." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
           </label>
           <select id="numVehiclesSelector" class="form-control">
             <option value="0">0</option>
@@ -388,12 +407,12 @@
         <label for="vehicle1fields">Vehicle 1</label>
         <div id="vehicle1fields" class="row">
           <div class="col-md-4">
-            <label for="milesDriven1">On average, how many miles you drive per week:</label>
+            <label for="milesDriven1">Miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
             <input id="milesDriven1" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
-            <label for="mileage1">Average gas mileage:</label>
+            <label for="mileage1">Gas mileage:</label>
             <!-- put units at end of input (input group...) -->
             <input id="mileage1" class="form-control" type="number" placeholder="mpg">
           </div>
@@ -403,12 +422,12 @@
         <label for="vehicle2fields">Vehicle 2</label>
         <div id="vehicle2fields" class="row">
           <div class="col-md-4">
-            <label for="milesDriven2">On average, how many miles you drive per week:</label>
+            <label for="milesDriven2">Miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
             <input id="milesDriven2" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
-            <label for="mileage2">Average gas mileage:</label>
+            <label for="mileage2">Gas mileage:</label>
             <!-- put units at end of input (input group...) -->
             <input id="mileage2" class="form-control" type="number" placeholder="mpg">
           </div>
@@ -418,12 +437,12 @@
         <label for="vehicle3fields">Vehicle 3</label>
         <div id="vehicle3fields" class="row">
           <div class="col-md-4">
-            <label for="milesDriven3">On average, how many miles you drive per week:</label>
+            <label for="milesDriven3">Miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
             <input id="milesDriven3" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
-            <label for="mileage3">Average gas mileage:</label>
+            <label for="mileage3">Gas mileage:</label>
             <!-- put units at end of input (input group...) -->
             <input id="mileage3" class="form-control" type="number" placeholder="mpg">
           </div>
@@ -433,12 +452,12 @@
         <label for="vehicle4fields">Vehicle 4</label>
         <div id="vehicle4fields" class="row">
           <div class="col-md-4">
-            <label for="milesDriven4">On average, how many miles you drive per week:</label>
+            <label for="milesDriven4">Miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
             <input id="milesDriven4" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
-            <label for="mileage4">Average gas mileage:</label>
+            <label for="mileage4">Gas mileage:</label>
             <!-- put units at end of input (input group...) -->
             <input id="mileage4" class="form-control" type="number" placeholder="mpg">
           </div>
@@ -448,12 +467,12 @@
         <label for="vehicle5fields">Vehicle 5</label>
         <div id="vehicle5fields" class="row">
           <div class="col-md-4">
-            <label for="milesDriven5">On average, how many miles you drive per week:</label>
+            <label for="milesDriven5">Miles you drive per week:</label>
             <!-- Need way to mark if a car is an electric vehicle -->
             <input id="milesDriven5" class="form-control" type="number" placeholder="miles per week">
           </div>
           <div class="col-md-4">
-            <label for="mileage5">Average gas mileage:</label>
+            <label for="mileage5">Gas mileage:</label>
             <!-- put units at end of input (input group...) -->
             <input id="mileage5" class="form-control" type="number" placeholder="mpg">
           </div>
@@ -466,7 +485,7 @@
       <div id="publicTransit" class="spacing-container">
         <label for="publicTransitCheckbox">
           What forms of public transit do you use? &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Please select all forms of public transportation that you use within the average week." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <fieldset id="publicTransitCheckbox" class="form-group">
           <div class="form-check form-check-inline">
@@ -499,7 +518,7 @@
         <label for="busFields">Bus</label>
         <div id="busFields" class="row">
           <div class="col-md-4">
-            <label for="busMiles">On average, miles you ride per week:</label>
+            <label for="busMiles">Miles you ride per week:</label>
             <input id="busMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -508,7 +527,7 @@
         <label for="localTrainFields">Local/Commuter Train</label>
         <div id="localTrainFields" class="row">
           <div class="col-md-4">
-            <label for="localTrainMiles">On average, miles you ride per week:</label>
+            <label for="localTrainMiles">Miles you ride per week:</label>
             <input id="localTrainMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -517,7 +536,7 @@
         <label for="longDistTrainFields">Long Distance Train</label>
         <div id="longDistTrainFields" class="row">
           <div class="col-md-4">
-            <label for="longDistTrainMiles">On average, miles you ride per week:</label>
+            <label for="longDistTrainMiles">Miles you ride per week:</label>
             <input id="longDistTrainMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -526,7 +545,7 @@
         <label for="tramFields">Tram</label>
         <div id="tramFields" class="row">
           <div class="col-md-4">
-            <label for="tramMiles">On average, miles you ride per week:</label>
+            <label for="tramMiles">Miles you ride per week:</label>
             <input id="tramMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -535,7 +554,7 @@
         <label for="subwayFields">Subway</label>
         <div id="subwayFields" class="row">
           <div class="col-md-4">
-            <label for="subwayMiles">On average, miles you ride per week:</label>
+            <label for="subwayMiles">Miles you ride per week:</label>
             <input id="subwayMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -544,7 +563,7 @@
         <label for="taxiFields">Taxi/Uber/Lyft</label>
         <div id="taxiFields" class="row">
           <div class="col-md-4">
-            <label for="taxiMiles">On average, miles you ride per week:</label>
+            <label for="taxiMiles">Miles you ride per week:</label>
             <input id="taxiMiles" class="form-control" type="number" placeholder="miles per week">
           </div>
         </div>
@@ -556,7 +575,7 @@
       <div id="flights" class="spacing-container">
         <label for="flightFields">
           Flights &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Click Add Flight to enter in more flights from the previous year. If you have no flights, click Continue." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <fieldset id="flightFields" class="form-group">
           <div id="flightTypeRadio" class="row">
@@ -673,7 +692,7 @@
       <div id="dietLocal">
         <label for="locallySourced" class="spacing-container">
           What percentage of your food is locally sourced? &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Locally sourced food is anything that you buy within your community. Please enter a numeric value (e.g. 20, 37, or 5). You do not need to include a percent sign." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <div class="row">
           <div class="col-md-4">
@@ -684,7 +703,7 @@
       <div id="dietRestrictions">
         <label for="dietaryStyle" class="spacing-container">
           What is your dietary style? &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Please select a dietary style from the drop down. If you are unsure what to select please choose 'No Restrictions'." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <div class="row">
           <div class="col-md-4">
@@ -700,7 +719,7 @@
       <div id="mealsPerDay">
         <label for="mealsPerDayInput" class="spacing-container">
           How many of your meals each day include meat? &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Please enter a number based on what you eat in a typical day. As an example, a person who typically has eggs for breakfast, a meat-based sandwich like Turkey for lunch, and a meat like chicken or beef with dinner, would enter the value 2." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <div class="row">
           <div class="col-md-4">
@@ -711,7 +730,7 @@
       <div id="typeOfMeat">
         <label for="typeOfMeatInput" class="spacing-container">
           Of the meat you consume, what percentage is beef, lamb, or goat? &nbsp;
-          <span class="oi oi-info" title="info" aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
+          <span class="oi oi-info" title="Please enter a numeric value (e.g. 20, 37, or 5). This number matters because lamb, beef, and goat productive has a larger environmental impact than the production of other meats like chicken and pork." aria-hidden="true" data-toggle="tooltip" data-placement="right"></span>
         </label>
         <div class="row">
           <div class="col-md-4">
@@ -909,10 +928,57 @@
       </div>
       <div class="spacing-container assessmentButtonContainer">
         <div class="assessmentBack">
-          <button id="goalsResults" class="btn" type="button">Back</button>
+          <button id="backGoals" class="btn" type="button">Back</button>
+        </div>
+        <div class="assessmentContinue">
+          <button id="doneAssessment" class="btn btn-primary" type="button">Done</button>
         </div>
       </div>
       <div class="clearFloats spacing-container"></div>
+    </div>
+
+    <div id="goals_modal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Badges you've earned:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Due to your emissions you have earned the badges <b>Below National Average</b>
+               and <b>Low Transportation</b>! Keep up the good work to earn more badges.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="okayButton" class="btn btn-primary" data-dismiss="modal">Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="paris_modal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New badge earned!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Because you have set your goal at the levels of the <b>Paris climate agreement</b>,
+              you just earned another badge! Keep up the good work to earn more badges.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="okayButton" class="btn btn-primary" data-dismiss="modal">Okay</button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
